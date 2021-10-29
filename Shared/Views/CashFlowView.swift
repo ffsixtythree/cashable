@@ -11,13 +11,13 @@ struct CashFlowView: View {
     
     var title: String
     var icon: Image
-    var color: Color
+    var iconColor: Color
     var amount: Double
     var currency: String
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10).fill(color)
+            RoundedRectangle(cornerRadius: 10).fill(Color.cell)
             HStack {
                 VStack(alignment: .leading) {
                     HStack(spacing: 5) {
@@ -26,7 +26,7 @@ struct CashFlowView: View {
                             .fontWeight(.medium)
                     }
                     .font(.subheadline)
-                    .foregroundColor(.white)
+                    .foregroundColor(iconColor)
                     Spacer()
                     Text("\(amount)")
                         .fontWeight(.bold)
@@ -48,7 +48,7 @@ struct CashFlowView: View {
 
 struct CashFlowView_Previews: PreviewProvider {
     static var previews: some View {
-        CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.down.circle.fill"), color: Color.red, amount: 200, currency: "USD")
+        CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.down.circle.fill"), iconColor: Color.red, amount: 200, currency: "USD")
             .previewLayout(.sizeThatFits)
     }
 }

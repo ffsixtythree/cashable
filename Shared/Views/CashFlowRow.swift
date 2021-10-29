@@ -15,8 +15,8 @@ struct CashFlowRow: View {
     
     var body: some View {
         HStack(spacing: 10) {
-            CashFlowView(title: "INCOME", icon: Image(systemName: "arrow.down.circle.fill"), color: Color.green, amount: incomeAmount, currency: currency)
-            CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.up.circle.fill"), color: Color.red, amount: expensesAmount, currency: currency)
+            CashFlowView(title: "INCOME", icon: Image(systemName: "arrow.down.circle.fill"), iconColor: Color.green, amount: incomeAmount, currency: currency)
+            CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.up.circle.fill"), iconColor: Color.red, amount: expensesAmount, currency: currency)
         }
         .listRowBackground(Color.clear)
         .listRowInsets(EdgeInsets())
