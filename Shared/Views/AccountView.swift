@@ -37,12 +37,12 @@ struct AccountView: View {
                         .font(.title2)
                         .fontWeight(.regular)
                         .foregroundColor(.text)
+                        .padding(.bottom, -5)
                 }
             }
             Spacer()
         }
         .padding(10)
-        .padding(.bottom, -4)
         .background(Color.cell)
         .cornerRadius(10)
         .aspectRatio(1 / 1, contentMode: .fill)

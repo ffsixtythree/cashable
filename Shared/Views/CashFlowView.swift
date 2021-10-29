@@ -18,15 +18,13 @@ struct CashFlowView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                VStack(alignment: .leading) {
-                    HStack(spacing: 5) {
-                        icon
-                        Text(title)
-                            .fontWeight(.medium)
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(iconColor)
+                HStack(spacing: 5) {
+                    icon
+                    Text(title)
+                        .fontWeight(.medium)
                 }
+                .font(.subheadline)
+                .foregroundColor(iconColor)
                 VStack(alignment: .leading) {
                     Text("\(amount)")
                         .fontWeight(.bold)
