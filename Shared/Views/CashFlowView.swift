@@ -16,9 +16,8 @@ struct CashFlowView: View {
     var currency: String
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10).fill(Color.cell)
-            HStack {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
                 VStack(alignment: .leading) {
                     HStack(spacing: 5) {
                         icon
@@ -27,21 +26,24 @@ struct CashFlowView: View {
                     }
                     .font(.subheadline)
                     .foregroundColor(iconColor)
-                    Spacer()
+                }
+                VStack(alignment: .leading) {
                     Text("\(amount)")
                         .fontWeight(.bold)
                         .font(.title2)
-                        .foregroundColor(.white)
+                        .foregroundColor(.text)
                     Text(currency)
                         .fontWeight(.regular)
                         .font(.title2)
-                        .foregroundColor(.white)
+                        .foregroundColor(.text)
                         .padding(.bottom, -5)
                 }
-                Spacer()
             }
-            .padding(10)
+            Spacer()
         }
+        .padding(10)
+        .background(Color.cell)
+        .cornerRadius(10)
         .aspectRatio(2 / 1, contentMode: .fit)
     }
 }

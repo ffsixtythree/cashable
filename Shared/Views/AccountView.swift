@@ -16,36 +16,35 @@ struct AccountView: View {
     var currency: String
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10).fill(Color.cell)
-            HStack {
-                VStack(alignment: .leading, spacing: 3) {
-                    VStack(alignment: .leading, spacing: 5) {
-                        icon
-                            .renderingMode(.original)
-                            .foregroundColor(iconColor)
-                            .font(.system(size: 40))
-                        Text(title)
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.gray)
-                    }
-                    VStack(alignment: .leading) {
-                        Text("\(amount)")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.text)
-                        Text(currency)
-                            .font(.title2)
-                            .fontWeight(.regular)
-                            .foregroundColor(.text)
-                    }
-                    .padding(.bottom, -5)
+        HStack {
+            VStack(alignment: .leading, spacing: 3) {
+                VStack(alignment: .leading, spacing: 5) {
+                    icon
+                        .renderingMode(.original)
+                        .foregroundColor(iconColor)
+                        .font(.system(size: 40))
+                    Text(title)
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.gray)
                 }
-                Spacer()
+                VStack(alignment: .leading) {
+                    Text("\(amount)")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.text)
+                    Text(currency)
+                        .font(.title2)
+                        .fontWeight(.regular)
+                        .foregroundColor(.text)
+                }
             }
-            .padding(10)
+            Spacer()
         }
+        .padding(10)
+        .padding(.bottom, -4)
+        .background(Color.cell)
+        .cornerRadius(10)
         .aspectRatio(1 / 1, contentMode: .fill)
     }
 }
