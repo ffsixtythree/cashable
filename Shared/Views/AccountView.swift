@@ -17,31 +17,34 @@ struct AccountView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10).fill(Color.white)
+            RoundedRectangle(cornerRadius: 10).fill(Color.cell)
             HStack {
-                VStack(alignment: .leading) {
-                    icon
-                        .renderingMode(.original)
-                        .foregroundColor(iconColor)
-                        .font(.system(size: 50))
-                        .padding(.bottom, 5)
-                    Text(title)
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.gray)
-                    Spacer()
-                    Text("\(amount)")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    Text(currency)
-                        .font(.title)
-                        .fontWeight(.medium)
-                        .foregroundColor(.primary)
+                VStack(alignment: .leading, spacing: 3) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        icon
+                            .renderingMode(.original)
+                            .foregroundColor(iconColor)
+                            .font(.system(size: 40))
+                        Text(title)
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.gray)
+                    }
+                    VStack(alignment: .leading) {
+                        Text("\(amount)")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.text)
+                        Text(currency)
+                            .font(.title2)
+                            .fontWeight(.regular)
+                            .foregroundColor(.text)
+                    }
+                    .padding(.bottom, -5)
                 }
                 Spacer()
             }
-            .padding(20)
+            .padding(10)
         }
         .aspectRatio(1 / 1, contentMode: .fill)
     }
@@ -49,7 +52,7 @@ struct AccountView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView(icon: Image(systemName: "creditcard.circle.fill"), iconColor: .blue, title: "BALANCE", amount: 2000, currency: "USD")
+        AccountView(icon: Image(systemName: "creditcard.circle.fill"), iconColor: .blue, title: "BALANCE", amount: 0, currency: "USD")
             .previewLayout(.sizeThatFits)
     }
 }

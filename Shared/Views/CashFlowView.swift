@@ -19,40 +19,36 @@ struct CashFlowView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10).fill(color)
             HStack {
-                VStack(alignment: .leading, spacing: 10) {
-                    Label {
-                        Text(title)
-                            .font(.headline)
-                            .fontWeight(.medium)
-                            .foregroundColor(.white)
-                    } icon: {
+                VStack(alignment: .leading) {
+                    HStack(spacing: 5) {
                         icon
-                            .font(.headline)
-                            .foregroundColor(.white)
-                    }
-                    VStack(alignment: .leading) {
-                        Text("\(amount)")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                           
-                        Text(currency)
-                            .font(.title)
+                        Text(title)
                             .fontWeight(.medium)
-                            .foregroundColor(.white)
                     }
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    Spacer()
+                    Text("\(amount)")
+                        .fontWeight(.bold)
+                        .font(.title2)
+                        .foregroundColor(.white)
+                    Text(currency)
+                        .fontWeight(.regular)
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .padding(.bottom, -5)
                 }
                 Spacer()
             }
-            .padding()
+            .padding(10)
         }
-        .aspectRatio(contentMode: .fit)
+        .aspectRatio(2 / 1, contentMode: .fit)
     }
 }
 
 struct CashFlowView_Previews: PreviewProvider {
     static var previews: some View {
-        CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.down.circle.fill"), color: Color.red, amount: 2000, currency: "USD")
+        CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.down.circle.fill"), color: Color.red, amount: 200, currency: "USD")
             .previewLayout(.sizeThatFits)
     }
 }

@@ -12,17 +12,13 @@ struct HomeView: View {
         NavigationView {
             List {
                 Section {
+                    CashFlowRow(incomeAmount: 0, expensesAmount: 0, currency: "USD")
+                }
+                Section {
                     AccountsRow()
                 }
                 Section {
-                    CashFlowRow(incomeAmount: 1000, expensesAmount: 500, currency: "USD")
-                }
-                Section {
-                    Text("First transaction")
-                    Text("Second transaction")
-                    Text("Third transaction")
-                    Text("Fourth transaction")
-                    Text("Fifth transaction")
+                    
                 }
                 
             }
