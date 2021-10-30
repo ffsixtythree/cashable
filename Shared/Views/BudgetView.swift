@@ -20,7 +20,6 @@ struct BudgetView: View {
                     Text("Income")
                     Spacer()
                     Text("450,000 UZS")
-                        .foregroundColor(.green)
                 }
             }
             
@@ -33,7 +32,6 @@ struct BudgetView: View {
                     Text("Expenses")
                     Spacer()
                     Text("450,000 UZS")
-                        .foregroundColor(.red)
                 }
             }
             

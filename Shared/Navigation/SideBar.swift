@@ -14,7 +14,7 @@ enum Tab {
 
 struct SideBar: View {
     
-    @State private var selectedTab: Tab?
+    @State private var selectedTab: Tab? = .home
     
     var body: some View {
         List {
@@ -24,9 +24,6 @@ struct SideBar: View {
             NavigationLink(destination: BudgetView(), tag: Tab.budget, selection: $selectedTab) {
                 Label("Budget", systemImage: "chart.bar.xaxis")
             }
-        }
-        .onAppear {
-            selectedTab = .home
         }
         .listStyle(.sidebar)
         .navigationTitle("Cashable")
