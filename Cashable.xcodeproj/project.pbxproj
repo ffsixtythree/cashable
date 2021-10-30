@@ -116,6 +116,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D742388F272DBBFA002124FD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D7D5F833272C0D87005E90CF /* CashableApp.swift */,
+				D7D5F834272C0D87005E90CF /* ContentView.swift */,
+				D7D5F835272C0D87005E90CF /* Persistence.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		D78CEA7E272C727800E5294A /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,12 +149,10 @@
 		D7D5F830272C0D87005E90CF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D78CEA7E272C727800E5294A /* Navigation */,
 				D7D5F875272C10A0005E90CF /* Models */,
 				D7D5F874272C107B005E90CF /* Views */,
-				D7D5F833272C0D87005E90CF /* CashableApp.swift */,
-				D7D5F834272C0D87005E90CF /* ContentView.swift */,
-				D7D5F835272C0D87005E90CF /* Persistence.swift */,
+				D742388F272DBBFA002124FD /* App */,
+				D78CEA7E272C727800E5294A /* Navigation */,
 				D7D5F836272C0D89005E90CF /* Assets.xcassets */,
 				D7D5F831272C0D87005E90CF /* Cashable.xcdatamodeld */,
 			);
