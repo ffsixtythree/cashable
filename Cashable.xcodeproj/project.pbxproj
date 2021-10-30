@@ -13,8 +13,8 @@
 		D706DC24272D964B00575741 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706DC22272D964B00575741 /* TabBar.swift */; };
 		D706DC26272D966700575741 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706DC25272D966700575741 /* SideBar.swift */; };
 		D7423889272DA56D002124FD /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706DC25272D966700575741 /* SideBar.swift */; };
-		D7423891272DC117002124FD /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7423890272DC117002124FD /* CategoryView.swift */; };
-		D7423892272DC117002124FD /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7423890272DC117002124FD /* CategoryView.swift */; };
+		D7423891272DC117002124FD /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7423890272DC117002124FD /* CategoryRow.swift */; };
+		D7423892272DC117002124FD /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7423890272DC117002124FD /* CategoryRow.swift */; };
 		D780199A272C3C8600746F84 /* CashFlowRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801999272C3C8600746F84 /* CashFlowRow.swift */; };
 		D780199B272C3C8600746F84 /* CashFlowRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801999272C3C8600746F84 /* CashFlowRow.swift */; };
 		D780199D272C404B00746F84 /* AccountsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780199C272C404B00746F84 /* AccountsRow.swift */; };
@@ -64,7 +64,7 @@
 		D706DC1F272D745700575741 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		D706DC22272D964B00575741 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D706DC25272D966700575741 /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
-		D7423890272DC117002124FD /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		D7423890272DC117002124FD /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		D7801999272C3C8600746F84 /* CashFlowRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowRow.swift; sourceTree = "<group>"; };
 		D780199C272C404B00746F84 /* AccountsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRow.swift; sourceTree = "<group>"; };
 		D7D5F832272C0D87005E90CF /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 				D7D5F880272C319C005E90CF /* CashFlowView.swift */,
 				D7801999272C3C8600746F84 /* CashFlowRow.swift */,
 				D706DC1F272D745700575741 /* TransactionRow.swift */,
-				D7423890272DC117002124FD /* CategoryView.swift */,
+				D7423890272DC117002124FD /* CategoryRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,7 +387,7 @@
 				D7D5F85C272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,
 				D7D5F878272C10E8005E90CF /* HomeView.swift in Sources */,
 				D780199D272C404B00746F84 /* AccountsRow.swift in Sources */,
-				D7423891272DC117002124FD /* CategoryView.swift in Sources */,
+				D7423891272DC117002124FD /* CategoryRow.swift in Sources */,
 				D780199A272C3C8600746F84 /* CashFlowRow.swift in Sources */,
 				D7D5F860272C0D89005E90CF /* ContentView.swift in Sources */,
 				D706DC23272D964B00575741 /* TabBar.swift in Sources */,
@@ -408,7 +408,7 @@
 				D7D5F85D272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,
 				D7D5F879272C10E8005E90CF /* HomeView.swift in Sources */,
 				D7423889272DA56D002124FD /* SideBar.swift in Sources */,
-				D7423892272DC117002124FD /* CategoryView.swift in Sources */,
+				D7423892272DC117002124FD /* CategoryRow.swift in Sources */,
 				D780199E272C404B00746F84 /* AccountsRow.swift in Sources */,
 				D706DC21272D745700575741 /* TransactionRow.swift in Sources */,
 				D780199B272C3C8600746F84 /* CashFlowRow.swift in Sources */,

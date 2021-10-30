@@ -26,13 +26,14 @@ struct TransactionRow: View {
                         .font(.body)
                         .foregroundColor(.gray)
                 }
-                .lineLimit(1)
             }
             Spacer()
             Text("20,000 UZS")
-                .foregroundColor(Color("text"))
+                .foregroundColor(.green)
                 .font(.body)
                 .fontWeight(.semibold)
+                .frame(width: 130, alignment: .trailing)
+                .lineLimit(1)
         }
         .padding(.top, 10)
         .padding(.bottom, 10)
