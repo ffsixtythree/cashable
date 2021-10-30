@@ -17,8 +17,8 @@ struct AccountView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 3) {
-                VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 10) {
                     icon
                         .renderingMode(.original)
                         .foregroundColor(iconColor)
@@ -42,7 +42,7 @@ struct AccountView: View {
             }
             Spacer()
         }
-        .padding(10)
+        .padding(20)
         .background(Color.cell)
         .cornerRadius(10)
         .aspectRatio(1 / 1, contentMode: .fill)

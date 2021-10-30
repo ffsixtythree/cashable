@@ -18,7 +18,11 @@ struct HomeView: View {
                     AccountsRow()
                 }
                 Section {
-                    
+                    TransactionRow()
+                    TransactionRow()
+                    TransactionRow()
+                    TransactionRow()
+                    TransactionRow()
                 }
                 
             }

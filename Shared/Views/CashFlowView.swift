@@ -17,7 +17,7 @@ struct CashFlowView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 5) {
                     icon
                     Text(title)
@@ -39,7 +39,7 @@ struct CashFlowView: View {
             }
             Spacer()
         }
-        .padding(10)
+        .padding(20)
         .background(Color.cell)
         .cornerRadius(10)
         .aspectRatio(2 / 1, contentMode: .fit)
