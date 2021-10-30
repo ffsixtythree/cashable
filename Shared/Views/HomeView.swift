@@ -9,27 +9,26 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        NavigationView {
-            List {
-                Section {
-                    CashFlowRow(incomeAmount: 0, expensesAmount: 0, currency: "USD")
-                }
-                Section {
-                    AccountsRow()
-                }
-                Section {
-                    TransactionRow()
-                    TransactionRow()
-                    TransactionRow()
-                    TransactionRow()
-                    TransactionRow()
-                }
-                
+        List {
+            Section {
+                CashFlowRow(incomeAmount: 0, expensesAmount: 0, currency: "USD")
             }
-            .ignoresSafeArea(edges: .bottom)
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Home")
+            Section {
+                AccountsRow()
+            }
+            Section {
+                TransactionRow()
+                TransactionRow()
+                TransactionRow()
+                TransactionRow()
+                TransactionRow()
+            }
+            
         }
+        .navigationTitle("Home")
+#if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+#endif
     }
 }
 

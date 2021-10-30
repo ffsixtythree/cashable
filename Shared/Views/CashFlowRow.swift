@@ -18,6 +18,7 @@ struct CashFlowRow: View {
             CashFlowView(title: "INCOME", icon: Image(systemName: "arrow.down.circle.fill"), iconColor: Color.green, amount: incomeAmount, currency: currency)
             CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.up.circle.fill"), iconColor: Color.red, amount: expensesAmount, currency: currency)
         }
+        .aspectRatio(1 / 2, contentMode: .fill)
         .listRowBackground(Color.clear)
         .listRowInsets(EdgeInsets())
     }

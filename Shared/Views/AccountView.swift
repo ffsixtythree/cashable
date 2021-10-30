@@ -17,7 +17,7 @@ struct AccountView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 8) {
                 VStack(alignment: .leading, spacing: 10) {
                     icon
                         .renderingMode(.original)
@@ -32,18 +32,18 @@ struct AccountView: View {
                     Text("\(amount)")
                         .font(.title2)
                         .fontWeight(.bold)
-                        .foregroundColor(.text)
+                        .foregroundColor(Color("text"))
                     Text(currency)
                         .font(.title2)
                         .fontWeight(.regular)
-                        .foregroundColor(.text)
+                        .foregroundColor(Color("text"))
                         .padding(.bottom, -5)
                 }
             }
             Spacer()
         }
         .padding(20)
-        .background(Color.cell)
+        .background(Color("cell"))
         .cornerRadius(10)
         .aspectRatio(1 / 1, contentMode: .fill)
     }

@@ -20,7 +20,7 @@ struct TransactionRow: View {
                     Text("Fuel")
                         .fontWeight(.semibold)
                         .font(.body)
-                        .foregroundColor(.text)
+                        .foregroundColor(Color("text"))
                     Text("1 hour ago")
                         .fontWeight(.regular)
                         .font(.body)
@@ -30,7 +30,7 @@ struct TransactionRow: View {
             }
             Spacer()
             Text("20,000 UZS")
-                .foregroundColor(.text)
+                .foregroundColor(Color("text"))
                 .font(.body)
                 .fontWeight(.semibold)
         }

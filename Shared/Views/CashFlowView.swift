@@ -29,20 +29,20 @@ struct CashFlowView: View {
                     Text("\(amount)")
                         .fontWeight(.bold)
                         .font(.title2)
-                        .foregroundColor(.text)
+                        .foregroundColor(Color("text"))
                     Text(currency)
                         .fontWeight(.regular)
                         .font(.title2)
-                        .foregroundColor(.text)
+                        .foregroundColor(Color("text"))
                         .padding(.bottom, -5)
                 }
             }
             Spacer()
         }
+        .lineLimit(1)
         .padding(20)
-        .background(Color.cell)
+        .background(Color("cell"))
         .cornerRadius(10)
-        .aspectRatio(2 / 1, contentMode: .fit)
     }
 }
 

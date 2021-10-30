@@ -9,14 +9,13 @@ import SwiftUI
 
 struct BudgetView: View {
     var body: some View {
-        NavigationView {
-            List {
-                
-            }
-            .ignoresSafeArea(edges: .bottom)
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Budget")
+        List {
+            
         }
+        .navigationTitle("Budget")
+#if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+#endif
     }
 }
 
