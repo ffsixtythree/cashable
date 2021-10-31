@@ -9,7 +9,6 @@ import SwiftUI
 
 enum Tab {
     case home
-    case budget
 }
 
 struct SideBar: View {
@@ -20,9 +19,6 @@ struct SideBar: View {
         List {
             NavigationLink(destination: HomeView(), tag: Tab.home, selection: $selectedTab) {
                 Label("Home", systemImage: "rectangle.3.group.fill")
-            }
-            NavigationLink(destination: BudgetView(), tag: Tab.budget, selection: $selectedTab) {
-                Label("Budget", systemImage: "chart.bar.xaxis")
             }
         }
         .listStyle(.sidebar)

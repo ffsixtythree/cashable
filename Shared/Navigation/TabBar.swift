@@ -16,12 +16,6 @@ struct TabBar: View {
             .tabItem {
                 Label("Home", systemImage: "rectangle.3.group.fill")
             }
-            NavigationView {
-                BudgetView()
-            }
-            .tabItem {
-                Label("Budget", systemImage: "chart.bar.xaxis")
-            }
         }
     }
 }

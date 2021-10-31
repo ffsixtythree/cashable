@@ -35,8 +35,6 @@
 		D7D5F865272C0D89005E90CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D5F836272C0D89005E90CF /* Assets.xcassets */; };
 		D7D5F878272C10E8005E90CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F877272C10E8005E90CF /* HomeView.swift */; };
 		D7D5F879272C10E8005E90CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F877272C10E8005E90CF /* HomeView.swift */; };
-		D7D5F87B272C1666005E90CF /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F87A272C1666005E90CF /* BudgetView.swift */; };
-		D7D5F87C272C1666005E90CF /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F87A272C1666005E90CF /* BudgetView.swift */; };
 		D7D5F87E272C21BE005E90CF /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F87D272C21BE005E90CF /* AccountView.swift */; };
 		D7D5F87F272C21BE005E90CF /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F87D272C21BE005E90CF /* AccountView.swift */; };
 		D7D5F881272C319C005E90CF /* CashFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F880272C319C005E90CF /* CashFlowView.swift */; };
@@ -82,7 +80,6 @@
 		D7D5F858272C0D89005E90CF /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		D7D5F85A272C0D89005E90CF /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		D7D5F877272C10E8005E90CF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		D7D5F87A272C1666005E90CF /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		D7D5F87D272C21BE005E90CF /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		D7D5F880272C319C005E90CF /* CashFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				D7D5F877272C10E8005E90CF /* HomeView.swift */,
-				D7D5F87A272C1666005E90CF /* BudgetView.swift */,
 				D7D5F87D272C21BE005E90CF /* AccountView.swift */,
 				D780199C272C404B00746F84 /* AccountsRow.swift */,
 				D7D5F880272C319C005E90CF /* CashFlowView.swift */,
@@ -382,7 +378,6 @@
 				D7D5F87E272C21BE005E90CF /* AccountView.swift in Sources */,
 				D7D5F85E272C0D89005E90CF /* CashableApp.swift in Sources */,
 				D706DC26272D966700575741 /* SideBar.swift in Sources */,
-				D7D5F87B272C1666005E90CF /* BudgetView.swift in Sources */,
 				D7D5F862272C0D89005E90CF /* Persistence.swift in Sources */,
 				D7D5F85C272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,
 				D7D5F878272C10E8005E90CF /* HomeView.swift in Sources */,
@@ -402,7 +397,6 @@
 			files = (
 				D7D5F87F272C21BE005E90CF /* AccountView.swift in Sources */,
 				D7D5F85F272C0D89005E90CF /* CashableApp.swift in Sources */,
-				D7D5F87C272C1666005E90CF /* BudgetView.swift in Sources */,
 				D706DC24272D964B00575741 /* TabBar.swift in Sources */,
 				D7D5F863272C0D89005E90CF /* Persistence.swift in Sources */,
 				D7D5F85D272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,

@@ -19,8 +19,9 @@ struct ContentView: View {
     var body: some View {
 #if os(iOS)
         if horizontalSizeClass == .compact {
-            TabBar()
-            .navigationViewStyle(.stack)
+            NavigationView {
+                HomeView()
+            }
         } else {
             NavigationView {
                 SideBar()
