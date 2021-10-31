@@ -12,10 +12,10 @@ struct TransactionRow: View {
     var body: some View {
         HStack {
             HStack {
-                Image(systemName: "fuelpump.circle.fill")
+                Image(systemName: "bolt.square.fill")
                     .renderingMode(.original)
                     .foregroundColor(.green)
-                    .font(.system(size: 40))
+                    .font(.system(size: 45))
                 VStack(alignment: .leading) {
                     Text("Fuel")
                         .fontWeight(.semibold)
@@ -35,8 +35,8 @@ struct TransactionRow: View {
                 .frame(width: 130, alignment: .trailing)
                 .lineLimit(1)
         }
-        .padding(.top, 10)
-        .padding(.bottom, 10)
+        .padding(.top, 5)
+        .padding(.bottom, 5)
     }
 }
 

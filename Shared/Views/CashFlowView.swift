@@ -34,7 +34,6 @@ struct CashFlowView: View {
                         .fontWeight(.regular)
                         .font(.title2)
                         .foregroundColor(Color("text"))
-                        .padding(.bottom, -5)
                 }
             }
             Spacer()

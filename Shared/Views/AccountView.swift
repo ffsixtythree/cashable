@@ -17,17 +17,15 @@ struct AccountView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 8) {
-                VStack(alignment: .leading, spacing: 10) {
-                    icon
-                        .renderingMode(.original)
-                        .foregroundColor(iconColor)
-                        .font(.system(size: 40))
-                    Text(title)
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.gray)
-                }
+            VStack(alignment: .leading, spacing: 10) {
+                icon
+                    .renderingMode(.original)
+                    .foregroundColor(iconColor)
+                    .font(.system(size: 40))
+                Text(title)
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.gray)
                 VStack(alignment: .leading) {
                     Text("\(amount)")
                         .font(.title2)
@@ -37,11 +35,11 @@ struct AccountView: View {
                         .font(.title2)
                         .fontWeight(.regular)
                         .foregroundColor(Color("text"))
-                        .padding(.bottom, -5)
                 }
             }
             Spacer()
         }
+        .lineLimit(1)
         .padding(20)
         .background(Color("cell"))
         .cornerRadius(10)
