@@ -9,13 +9,12 @@ import SwiftUI
 
 struct TransactionRow: View {
     
+    var category: Category
+    
     var body: some View {
         HStack {
-            HStack {
-                Image(systemName: "bolt.square.fill")
-                    .renderingMode(.original)
-                    .foregroundColor(.green)
-                    .font(.system(size: 45))
+            HStack(spacing: 10) {
+                CategoryImage(category: category)
                 VStack(alignment: .leading) {
                     Text("Fuel")
                         .fontWeight(.semibold)
@@ -42,7 +41,7 @@ struct TransactionRow: View {
 
 struct TransactionRow_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionRow()
+        TransactionRow(category: .food)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -17,11 +17,9 @@ struct HomeView: View {
                 AccountsRow()
             }
             Section {
-                TransactionRow()
-                TransactionRow()
-                TransactionRow()
-                TransactionRow()
-                TransactionRow()
+                ForEach(0..<5) { _ in
+                    TransactionRow(category: .shopping)
+                }
             }
             
         }
