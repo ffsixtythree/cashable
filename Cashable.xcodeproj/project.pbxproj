@@ -19,6 +19,10 @@
 		D780199B272C3C8600746F84 /* CashFlowRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801999272C3C8600746F84 /* CashFlowRow.swift */; };
 		D780199D272C404B00746F84 /* AccountsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780199C272C404B00746F84 /* AccountsRow.swift */; };
 		D780199E272C404B00746F84 /* AccountsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780199C272C404B00746F84 /* AccountsRow.swift */; };
+		D78E42C8272E9C2600328D6D /* CashFlowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */; };
+		D78E42C9272E9C2600328D6D /* CashFlowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */; };
+		D78E42CB272E9D5400328D6D /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42CA272E9D5400328D6D /* BalanceView.swift */; };
+		D78E42CC272E9D5400328D6D /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42CA272E9D5400328D6D /* BalanceView.swift */; };
 		D7D5F84D272C0D89005E90CF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F84C272C0D89005E90CF /* Tests_iOS.swift */; };
 		D7D5F84F272C0D89005E90CF /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F84E272C0D89005E90CF /* Tests_iOSLaunchTests.swift */; };
 		D7D5F859272C0D89005E90CF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F858272C0D89005E90CF /* Tests_macOS.swift */; };
@@ -65,6 +69,8 @@
 		D7423890272DC117002124FD /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		D7801999272C3C8600746F84 /* CashFlowRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowRow.swift; sourceTree = "<group>"; };
 		D780199C272C404B00746F84 /* AccountsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRow.swift; sourceTree = "<group>"; };
+		D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailView.swift; sourceTree = "<group>"; };
+		D78E42CA272E9D5400328D6D /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		D7D5F832272C0D87005E90CF /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		D7D5F833272C0D87005E90CF /* CashableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashableApp.swift; sourceTree = "<group>"; };
 		D7D5F834272C0D87005E90CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -204,8 +210,10 @@
 				D780199C272C404B00746F84 /* AccountsRow.swift */,
 				D7D5F880272C319C005E90CF /* CashFlowView.swift */,
 				D7801999272C3C8600746F84 /* CashFlowRow.swift */,
+				D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */,
 				D706DC1F272D745700575741 /* TransactionRow.swift */,
 				D7423890272DC117002124FD /* CategoryRow.swift */,
+				D78E42CA272E9D5400328D6D /* BalanceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,12 +389,14 @@
 				D7D5F862272C0D89005E90CF /* Persistence.swift in Sources */,
 				D7D5F85C272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,
 				D7D5F878272C10E8005E90CF /* HomeView.swift in Sources */,
+				D78E42CB272E9D5400328D6D /* BalanceView.swift in Sources */,
 				D780199D272C404B00746F84 /* AccountsRow.swift in Sources */,
 				D7423891272DC117002124FD /* CategoryRow.swift in Sources */,
 				D780199A272C3C8600746F84 /* CashFlowRow.swift in Sources */,
 				D7D5F860272C0D89005E90CF /* ContentView.swift in Sources */,
 				D706DC23272D964B00575741 /* TabBar.swift in Sources */,
 				D706DC20272D745700575741 /* TransactionRow.swift in Sources */,
+				D78E42C8272E9C2600328D6D /* CashFlowDetailView.swift in Sources */,
 				D7D5F881272C319C005E90CF /* CashFlowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,12 +411,14 @@
 				D7D5F863272C0D89005E90CF /* Persistence.swift in Sources */,
 				D7D5F85D272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,
 				D7D5F879272C10E8005E90CF /* HomeView.swift in Sources */,
+				D78E42CC272E9D5400328D6D /* BalanceView.swift in Sources */,
 				D7423889272DA56D002124FD /* SideBar.swift in Sources */,
 				D7423892272DC117002124FD /* CategoryRow.swift in Sources */,
 				D780199E272C404B00746F84 /* AccountsRow.swift in Sources */,
 				D706DC21272D745700575741 /* TransactionRow.swift in Sources */,
 				D780199B272C3C8600746F84 /* CashFlowRow.swift in Sources */,
 				D7D5F861272C0D89005E90CF /* ContentView.swift in Sources */,
+				D78E42C9272E9C2600328D6D /* CashFlowDetailView.swift in Sources */,
 				D7D5F882272C319C005E90CF /* CashFlowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

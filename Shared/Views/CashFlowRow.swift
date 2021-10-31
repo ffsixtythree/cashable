@@ -9,16 +9,31 @@ import SwiftUI
 
 struct CashFlowRow: View {
     
+    @State private var isDetailShown: Int? = 0
+    
     var incomeAmount: Double
     var expensesAmount: Double
     var currency: String
     
     var body: some View {
-        HStack(spacing: 10) {
-            CashFlowView(title: "INCOME", icon: Image(systemName: "arrow.down.circle.fill"), iconColor: Color.green, amount: incomeAmount, currency: currency)
-            CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.up.circle.fill"), iconColor: Color.red, amount: expensesAmount, currency: currency)
+        ZStack {
+            NavigationLink(destination: CashFlowDetailView(), tag: 1, selection: $isDetailShown) {
+                EmptyView()
+            }
+            NavigationLink(destination: CashFlowDetailView(), tag: 2, selection: $isDetailShown) {
+                EmptyView()
+            }
+            HStack(spacing: 10) {
+                CashFlowView(title: "INCOME", icon: Image(systemName: "arrow.down.circle.fill"), iconColor: Color.green, amount: incomeAmount, currency: currency)
+                    .onTapGesture {
+                        self.isDetailShown = 1
+                    }
+                CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.up.circle.fill"), iconColor: Color.red, amount: expensesAmount, currency: currency)
+                    .onTapGesture {
+                        self.isDetailShown = 2
+                    }
+            }
         }
-        .aspectRatio(1 / 2, contentMode: .fill)
         .listRowBackground(Color.clear)
         .listRowInsets(EdgeInsets())
     }
