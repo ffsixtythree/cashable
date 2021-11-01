@@ -177,6 +177,53 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		D7C88A252730197C0029468A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				D7C88A19272F2A350029468A /* CategoryImage.swift */,
+				D7C88A1C272FF2270029468A /* AccountImage.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		D7C88A262730198A0029468A /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				D7C88A08272F1F140029468A /* TransactionForm.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		D7C88A27273019950029468A /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				D780199C272C404B00746F84 /* AccountsRow.swift */,
+				D7801999272C3C8600746F84 /* CashFlowRow.swift */,
+				D706DC1F272D745700575741 /* TransactionRow.swift */,
+				D7423890272DC117002124FD /* CategoryRow.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		D7C88A282730199F0029468A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D78E42D1272EB82700328D6D /* AccountDetailView.swift */,
+				D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D7C88A2A273019D10029468A /* Secondary */ = {
+			isa = PBXGroup;
+			children = (
+				D7D5F87D272C21BE005E90CF /* AccountView.swift */,
+				D7D5F880272C319C005E90CF /* CashFlowView.swift */,
+				D78E42CA272E9D5400328D6D /* BalanceView.swift */,
+			);
+			path = Secondary;
+			sourceTree = "<group>";
+		};
 		D7D5F82B272C0D87005E90CF = {
 			isa = PBXGroup;
 			children = (
@@ -243,18 +290,11 @@
 			isa = PBXGroup;
 			children = (
 				D7D5F877272C10E8005E90CF /* HomeView.swift */,
-				D7D5F87D272C21BE005E90CF /* AccountView.swift */,
-				D780199C272C404B00746F84 /* AccountsRow.swift */,
-				D78E42D1272EB82700328D6D /* AccountDetailView.swift */,
-				D7D5F880272C319C005E90CF /* CashFlowView.swift */,
-				D7801999272C3C8600746F84 /* CashFlowRow.swift */,
-				D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */,
-				D706DC1F272D745700575741 /* TransactionRow.swift */,
-				D7423890272DC117002124FD /* CategoryRow.swift */,
-				D78E42CA272E9D5400328D6D /* BalanceView.swift */,
-				D7C88A08272F1F140029468A /* TransactionForm.swift */,
-				D7C88A19272F2A350029468A /* CategoryImage.swift */,
-				D7C88A1C272FF2270029468A /* AccountImage.swift */,
+				D7C88A282730199F0029468A /* Detail */,
+				D7C88A262730198A0029468A /* Form */,
+				D7C88A2A273019D10029468A /* Secondary */,
+				D7C88A27273019950029468A /* Row */,
+				D7C88A252730197C0029468A /* Image */,
 			);
 			path = Views;
 			sourceTree = "<group>";

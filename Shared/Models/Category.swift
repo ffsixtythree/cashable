@@ -19,13 +19,20 @@ enum Category: String, CaseIterable {
     
     var systemNameIcon: String {
         switch self {
-        case .food: return "takeoutbag.and.cup.and.straw.fill"
-        case .entertainment: return "theatermasks.fill"
-        case .health: return "staroflife.fill"
-        case .shopping: return "cart.fill"
-        case .transportation: return "car.fill"
-        case .utilities: return "bolt.fill"
-        case .other: return "tag.fill"
+        case .food:
+                return "takeoutbag.and.cup.and.straw.fill"
+        case .entertainment:
+                return "theatermasks.fill"
+        case .health:
+                return "staroflife.fill"
+        case .shopping:
+                return "cart.fill"
+        case .transportation:
+                return "car.fill"
+        case .utilities:
+                return "bolt.fill"
+        case .other:
+                return "tag.fill"
         }
     }
     
