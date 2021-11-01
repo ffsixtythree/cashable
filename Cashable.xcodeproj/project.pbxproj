@@ -262,9 +262,9 @@
 		D7D5F875272C10A0005E90CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D7C88A0B272F21270029468A /* Category.swift */,
-				D7C88A16272F25C50029468A /* TransactionType.swift */,
 				D7C88A1F272FF2420029468A /* AccountType.swift */,
+				D7C88A16272F25C50029468A /* TransactionType.swift */,
+				D7C88A0B272F21270029468A /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

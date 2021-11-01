@@ -11,9 +11,8 @@ struct CashFlowRow: View {
     
     @State private var isDetailShown: Int? = 0
     
-    var incomeAmount: Double
-    var expensesAmount: Double
-    var currency: String
+    var incomeAmount: String
+    var expensesAmount: String
     
     var body: some View {
         ZStack {
@@ -24,11 +23,11 @@ struct CashFlowRow: View {
                 EmptyView()
             }
             HStack(spacing: 10) {
-                CashFlowView(type: .income, amount: incomeAmount, currency: currency)
+                CashFlowView(type: .income, amount: incomeAmount)
                     .onTapGesture {
                         self.isDetailShown = 1
                     }
-                CashFlowView(type: .expense, amount: expensesAmount, currency: currency)
+                CashFlowView(type: .expense, amount: expensesAmount)
                     .onTapGesture {
                         self.isDetailShown = 2
                     }
@@ -41,6 +40,6 @@ struct CashFlowRow: View {
 
 struct CashFlowRow_Previews: PreviewProvider {
     static var previews: some View {
-        CashFlowRow(incomeAmount: 15000, expensesAmount: 8000, currency: "USD")
+        CashFlowRow(incomeAmount: "15,000", expensesAmount: "8,000")
     }
 }

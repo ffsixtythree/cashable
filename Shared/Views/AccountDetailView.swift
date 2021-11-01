@@ -10,11 +10,12 @@ import SwiftUI
 struct AccountDetailView: View {
     
     var type: AccountType
+    var amount: String
     
     var body: some View {
         List {
             Section {
-                BalanceView()
+                BalanceView(type: .balance, amount: amount)
             }
             Section {
                 ForEach(0..<5) { _ in
@@ -27,6 +28,6 @@ struct AccountDetailView: View {
 
 struct AccountDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountDetailView(type: .balance)
+        AccountDetailView(type: .balance, amount: "300,000 UZS")
     }
 }

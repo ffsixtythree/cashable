@@ -30,7 +30,7 @@ enum AccountType: String, CaseIterable {
             case .balance:
                 return .blue
             case .primary:
-                return .red
+                return .yellow
             case .reserve:
                 return .green
         }

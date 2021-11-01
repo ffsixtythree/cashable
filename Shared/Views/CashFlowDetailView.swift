@@ -12,7 +12,7 @@ struct CashFlowDetailView: View {
     var body: some View {
         List {
             Section {
-                BalanceView()
+                
             }
             Section {
                 ForEach(0..<10) { _ in

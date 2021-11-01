@@ -12,14 +12,14 @@ struct HomeView: View {
     var body: some View {
         List {
             Section {
-                CashFlowRow(incomeAmount: 0, expensesAmount: 0, currency: "USD")
+                CashFlowRow(incomeAmount: "1,500,000 UZS", expensesAmount: "500,000 UZS")
             }
             Section {
                 AccountsRow()
             }
             Section {
                 ForEach(0..<5) { _ in
-                    TransactionRow(category: .shopping)
+                    TransactionRow(category: .food)
                 }
             }
             

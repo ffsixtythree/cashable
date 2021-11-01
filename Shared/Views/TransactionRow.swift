@@ -17,7 +17,7 @@ struct TransactionRow: View {
                 CategoryImage(category: category)
                 VStack(alignment: .leading) {
                     Text("Fuel")
-                        .fontWeight(.semibold)
+                        .fontWeight(.medium)
                         .font(.body)
                         .foregroundColor(Color("text"))
                     Text("1 hour ago")

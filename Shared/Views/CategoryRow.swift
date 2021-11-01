@@ -14,7 +14,7 @@ struct CategoryRow: View {
             HStack(spacing: 10) {
                 CategoryImage(category: .shopping)
                 Text("Fuel")
-                    .fontWeight(.semibold)
+                    .fontWeight(.medium)
                     .font(.body)
                     .foregroundColor(Color("text"))
             }

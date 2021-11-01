@@ -12,7 +12,9 @@ struct AccountsRow: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
                 ForEach(AccountType.allCases, id: \.id) { type in
-                    AccountView(type: type)
+                    NavigationLink(destination: AccountDetailView(type: type, amount: "500,000 UZS")) {
+                        AccountView(type: type, amount: "500,000 UZS")
+                    }
                 }
             }
         }

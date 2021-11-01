@@ -12,6 +12,15 @@ enum TransactionType: String, CaseIterable {
     case income
     case expense
     
+    var title: String {
+        switch self {
+            case .income:
+                return "INCOME"
+            case .expense:
+                return "EXPENSES"
+        }
+    }
+    
     var systemNameIcon: String {
         switch self {
             case .income:

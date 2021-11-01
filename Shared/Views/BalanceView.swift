@@ -9,23 +9,22 @@ import SwiftUI
 
 struct BalanceView: View {
     
+    var type: AccountType
+    var amount: String
+    
     var body: some View {
         HStack {
             Spacer()
             VStack(alignment: .center, spacing: 10) {
-                Image(systemName: "arrow.down.circle.fill")
-                    .renderingMode(.original)
-                    .foregroundColor(.green)
-                    .font(.system(size: 50))
-                Text("Income")
+                AccountImage(type: type, width: 30, padding: 15)
+                Text(type.rawValue.capitalized)
                     .font(.title)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("text"))
+                    .fontWeight(.medium)
+                    .foregroundColor(type.color)
                 VStack(alignment: .leading) {
-                    Text("20,000 UZS")
+                    Text(amount)
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(.green)
                 }
             }
             Spacer()
@@ -38,6 +37,6 @@ struct BalanceView: View {
 
 struct BalanceView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceView()
+        BalanceView(type: .balance, amount: "20,000 UZS")
     }
 }
