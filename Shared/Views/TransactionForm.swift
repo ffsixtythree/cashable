@@ -13,6 +13,7 @@ struct TransactionForm: View {
     @State var title: String = ""
     @State var amount: Double = 0
     @State var category: Category = .utilities
+    @State var account: AccountType = .primary
     @State var date: Date = Date()
     @FocusState private var isFocused: Bool
     
@@ -46,6 +47,14 @@ struct TransactionForm: View {
                     DatePicker(selection: $date, displayedComponents: .date) {
                         Text("Date")
                     }
+                }
+                
+                Section {
+                    Picker("Account", selection: $account) {
+                        Text(AccountType.primary.rawValue.capitalized).tag(AccountType.primary)
+                        Text(AccountType.reserve.rawValue.capitalized).tag(AccountType.reserve)
+                    }
+                    
                 }
             }
             .toolbar {
