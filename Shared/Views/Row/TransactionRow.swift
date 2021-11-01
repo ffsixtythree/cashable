@@ -21,8 +21,8 @@ struct TransactionRow: View {
                         .font(.body)
                         .foregroundColor(Color("text"))
                     Text("1 hour ago")
-                        .fontWeight(.regular)
                         .font(.body)
+                        .fontWeight(.regular)
                         .foregroundColor(.gray)
                 }
             }
@@ -30,7 +30,7 @@ struct TransactionRow: View {
             Text("20,000 UZS")
                 .foregroundColor(.green)
                 .font(.body)
-                .fontWeight(.semibold)
+                .fontWeight(.regular)
                 .frame(width: 130, alignment: .trailing)
                 .lineLimit(1)
         }
