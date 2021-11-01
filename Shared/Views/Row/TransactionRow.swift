@@ -10,24 +10,26 @@ import SwiftUI
 struct TransactionRow: View {
     
     var category: Category
+    var amount: String
+    var date: String
     
     var body: some View {
         HStack {
             HStack(spacing: 10) {
                 CategoryImage(category: category)
                 VStack(alignment: .leading) {
-                    Text("Fuel")
+                    Text(category.rawValue.capitalized)
                         .fontWeight(.medium)
                         .font(.body)
                         .foregroundColor(Color("text"))
-                    Text("1 hour ago")
+                    Text(date)
                         .font(.body)
                         .fontWeight(.regular)
                         .foregroundColor(.gray)
                 }
             }
             Spacer()
-            Text("20,000 UZS")
+            Text(amount)
                 .foregroundColor(.green)
                 .font(.body)
                 .fontWeight(.regular)
@@ -41,7 +43,7 @@ struct TransactionRow: View {
 
 struct TransactionRow_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionRow(category: .food)
+        TransactionRow(category: .food, amount: "5,000 UZS", date: "2 hours ago")
             .previewLayout(.sizeThatFits)
     }
 }

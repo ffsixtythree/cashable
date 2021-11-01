@@ -213,14 +213,14 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		D7C88A2A273019D10029468A /* Secondary */ = {
+		D7C88A2A273019D10029468A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				D7D5F87D272C21BE005E90CF /* AccountView.swift */,
 				D7D5F880272C319C005E90CF /* CashFlowView.swift */,
 				D78E42CA272E9D5400328D6D /* BalanceView.swift */,
 			);
-			path = Secondary;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D7C88A2B27301AC40029468A /* Resources */ = {
@@ -307,7 +307,7 @@
 				D7D5F877272C10E8005E90CF /* HomeView.swift */,
 				D7C88A282730199F0029468A /* Detail */,
 				D7C88A262730198A0029468A /* Form */,
-				D7C88A2A273019D10029468A /* Secondary */,
+				D7C88A2A273019D10029468A /* Cell */,
 				D7C88A27273019950029468A /* Row */,
 				D7C88A252730197C0029468A /* Image */,
 			);

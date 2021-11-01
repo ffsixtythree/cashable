@@ -18,8 +18,8 @@ struct HomeView: View {
                 AccountsRow()
             }
             Section {
-                ForEach(0..<5) { _ in
-                    TransactionRow(category: .food)
+                ForEach(Category.allCases) { category in
+                    TransactionRow(category: category, amount: "2,000 UZS", date: "2 days ago")
                 }
             }
             

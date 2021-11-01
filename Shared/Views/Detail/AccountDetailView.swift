@@ -15,11 +15,11 @@ struct AccountDetailView: View {
     var body: some View {
         List {
             Section {
-                BalanceView(type: .balance, amount: amount)
+                BalanceView(type: type, amount: amount)
             }
             Section {
-                ForEach(0..<5) { _ in
-                    TransactionRow(category: .food)
+                ForEach(Category.allCases) { category in
+                    TransactionRow(category: category, amount: "2,000 UZS", date: "2 days ago")
                 }
             }
         }
