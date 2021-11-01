@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BalanceView: View {
+struct AccoundDetailHeaderView: View {
     
     var type: AccountType
     var amount: String
@@ -24,7 +24,7 @@ struct BalanceView: View {
                 VStack(alignment: .leading) {
                     Text(amount)
                         .font(.title)
-                        .fontWeight(.bold)
+                        .fontWeight(.semibold)
                 }
             }
             Spacer()
@@ -35,8 +35,8 @@ struct BalanceView: View {
     }
 }
 
-struct BalanceView_Previews: PreviewProvider {
+struct AccoundDetailHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceView(type: .balance, amount: "20,000 UZS")
+        AccoundDetailHeaderView(type: .balance, amount: "20,000 UZS")
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State private var isTransactionFormPresented: Bool = false
+    
     var body: some View {
         List {
             Section {
@@ -23,6 +25,18 @@ struct HomeView: View {
                 }
             }
             
+        }
+        .sheet(isPresented: $isTransactionFormPresented) {
+            TransactionForm()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isTransactionFormPresented = true
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                }
+            }
         }
         .navigationTitle("Home")
 #if os(iOS)

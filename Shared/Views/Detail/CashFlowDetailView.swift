@@ -9,14 +9,31 @@ import SwiftUI
 
 struct CashFlowDetailView: View {
     
+    @State private var isTransactionFormPresented: Bool = false
+    
+    var type: TransactionType
+    var amount: String
+    
     var body: some View {
         List {
             Section {
-                
+                CashFlowDetailHeaderView(type: type, amount: amount)
             }
             Section {
-                ForEach(0..<10) { _ in
-                    CategoryRow()
+                ForEach(Category.allCases) { category in
+                    CategoryRow(category: category, amount: "234,000 UZS")
+                }
+            }
+        }
+        .sheet(isPresented: $isTransactionFormPresented) {
+            TransactionForm()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isTransactionFormPresented = true
+                } label: {
+                    Image(systemName: "plus.circle.fill")
                 }
             }
         }
@@ -25,6 +42,6 @@ struct CashFlowDetailView: View {
 
 struct CashFlowDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CashFlowDetailView()
+        CashFlowDetailView(type: .expense, amount: "20,000 UZS")
     }
 }

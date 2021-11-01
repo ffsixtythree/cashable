@@ -10,7 +10,7 @@ import SwiftUI
 enum AccountType: String, CaseIterable {
     
     case balance
-    case primary
+    case main
     case reserve
     
     
@@ -18,7 +18,7 @@ enum AccountType: String, CaseIterable {
         switch self {
             case .balance:
                 return "banknote.fill"
-            case .primary:
+            case .main:
                 return "square.stack.3d.up.fill"
             case .reserve:
                 return "bag.fill"
@@ -29,7 +29,7 @@ enum AccountType: String, CaseIterable {
         switch self {
             case .balance:
                 return .blue
-            case .primary:
+            case .main:
                 return .yellow
             case .reserve:
                 return .green

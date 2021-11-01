@@ -21,8 +21,8 @@
 		D780199E272C404B00746F84 /* AccountsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780199C272C404B00746F84 /* AccountsRow.swift */; };
 		D78E42C8272E9C2600328D6D /* CashFlowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */; };
 		D78E42C9272E9C2600328D6D /* CashFlowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */; };
-		D78E42CB272E9D5400328D6D /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42CA272E9D5400328D6D /* BalanceView.swift */; };
-		D78E42CC272E9D5400328D6D /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42CA272E9D5400328D6D /* BalanceView.swift */; };
+		D78E42CB272E9D5400328D6D /* AccoundDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42CA272E9D5400328D6D /* AccoundDetailHeaderView.swift */; };
+		D78E42CC272E9D5400328D6D /* AccoundDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42CA272E9D5400328D6D /* AccoundDetailHeaderView.swift */; };
 		D78E42D2272EB82700328D6D /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42D1272EB82700328D6D /* AccountDetailView.swift */; };
 		D78E42D3272EB82700328D6D /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42D1272EB82700328D6D /* AccountDetailView.swift */; };
 		D7C88A09272F1F140029468A /* TransactionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C88A08272F1F140029468A /* TransactionForm.swift */; };
@@ -41,6 +41,8 @@
 		D7C88A1E272FF2270029468A /* AccountImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C88A1C272FF2270029468A /* AccountImage.swift */; };
 		D7C88A20272FF2420029468A /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C88A1F272FF2420029468A /* AccountType.swift */; };
 		D7C88A21272FF2420029468A /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C88A1F272FF2420029468A /* AccountType.swift */; };
+		D7C88A2E27306BC20029468A /* CashFlowDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C88A2D27306BC20029468A /* CashFlowDetailHeaderView.swift */; };
+		D7C88A2F27306BC20029468A /* CashFlowDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C88A2D27306BC20029468A /* CashFlowDetailHeaderView.swift */; };
 		D7D5F84D272C0D89005E90CF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F84C272C0D89005E90CF /* Tests_iOS.swift */; };
 		D7D5F84F272C0D89005E90CF /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F84E272C0D89005E90CF /* Tests_iOSLaunchTests.swift */; };
 		D7D5F859272C0D89005E90CF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5F858272C0D89005E90CF /* Tests_macOS.swift */; };
@@ -88,7 +90,7 @@
 		D7801999272C3C8600746F84 /* CashFlowRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowRow.swift; sourceTree = "<group>"; };
 		D780199C272C404B00746F84 /* AccountsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRow.swift; sourceTree = "<group>"; };
 		D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailView.swift; sourceTree = "<group>"; };
-		D78E42CA272E9D5400328D6D /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		D78E42CA272E9D5400328D6D /* AccoundDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccoundDetailHeaderView.swift; sourceTree = "<group>"; };
 		D78E42D1272EB82700328D6D /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		D7C88A08272F1F140029468A /* TransactionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionForm.swift; sourceTree = "<group>"; };
 		D7C88A0B272F21270029468A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		D7C88A19272F2A350029468A /* CategoryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImage.swift; sourceTree = "<group>"; };
 		D7C88A1C272FF2270029468A /* AccountImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImage.swift; sourceTree = "<group>"; };
 		D7C88A1F272FF2420029468A /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
+		D7C88A2D27306BC20029468A /* CashFlowDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailHeaderView.swift; sourceTree = "<group>"; };
 		D7D5F832272C0D87005E90CF /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		D7D5F833272C0D87005E90CF /* CashableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashableApp.swift; sourceTree = "<group>"; };
 		D7D5F834272C0D87005E90CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -217,8 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				D7D5F87D272C21BE005E90CF /* AccountView.swift */,
+				D78E42CA272E9D5400328D6D /* AccoundDetailHeaderView.swift */,
 				D7D5F880272C319C005E90CF /* CashFlowView.swift */,
-				D78E42CA272E9D5400328D6D /* BalanceView.swift */,
+				D7C88A2D27306BC20029468A /* CashFlowDetailHeaderView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -487,11 +491,12 @@
 				D7C88A09272F1F140029468A /* TransactionForm.swift in Sources */,
 				D7D5F85E272C0D89005E90CF /* CashableApp.swift in Sources */,
 				D706DC26272D966700575741 /* SideBar.swift in Sources */,
+				D7C88A2E27306BC20029468A /* CashFlowDetailHeaderView.swift in Sources */,
 				D7D5F862272C0D89005E90CF /* Persistence.swift in Sources */,
 				D7C88A0C272F21270029468A /* Category.swift in Sources */,
 				D7D5F85C272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,
 				D7D5F878272C10E8005E90CF /* HomeView.swift in Sources */,
-				D78E42CB272E9D5400328D6D /* BalanceView.swift in Sources */,
+				D78E42CB272E9D5400328D6D /* AccoundDetailHeaderView.swift in Sources */,
 				D7C88A1D272FF2270029468A /* AccountImage.swift in Sources */,
 				D780199D272C404B00746F84 /* AccountsRow.swift in Sources */,
 				D7423891272DC117002124FD /* CategoryRow.swift in Sources */,
@@ -518,11 +523,12 @@
 				D7C88A0A272F1F140029468A /* TransactionForm.swift in Sources */,
 				D7D5F85F272C0D89005E90CF /* CashableApp.swift in Sources */,
 				D706DC24272D964B00575741 /* TabBar.swift in Sources */,
+				D7C88A2F27306BC20029468A /* CashFlowDetailHeaderView.swift in Sources */,
 				D7D5F863272C0D89005E90CF /* Persistence.swift in Sources */,
 				D7C88A0D272F21270029468A /* Category.swift in Sources */,
 				D7D5F85D272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,
 				D7D5F879272C10E8005E90CF /* HomeView.swift in Sources */,
-				D78E42CC272E9D5400328D6D /* BalanceView.swift in Sources */,
+				D78E42CC272E9D5400328D6D /* AccoundDetailHeaderView.swift in Sources */,
 				D7C88A1E272FF2270029468A /* AccountImage.swift in Sources */,
 				D7423889272DA56D002124FD /* SideBar.swift in Sources */,
 				D7423892272DC117002124FD /* CategoryRow.swift in Sources */,

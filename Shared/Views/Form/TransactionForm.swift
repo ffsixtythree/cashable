@@ -13,9 +13,9 @@ struct TransactionForm: View {
     @State var title: String = ""
     @State var amount: Double = 0
     @State var category: Category = .utilities
-    @State var account: AccountType = .primary
+    @State var account: AccountType = .main
     @State var date: Date = Date()
-    @FocusState private var isFocused: Bool
+    @FocusState private var isTitleFocused: Bool
     
     @Environment(\.presentationMode)
     var presentationMode
@@ -35,9 +35,11 @@ struct TransactionForm: View {
                 }
                 Section {
                     TextField("Title", text: $title)
+                        .disableAutocorrection(true)
+                        .focused($isTitleFocused)
                     TextField("Amount", value: $amount, formatter: Utils.numberFormatter)
+                        .foregroundColor(type.color)
                         .keyboardType(.decimalPad)
-                        .focused($isFocused)
                     Picker("Category", selection: $category) {
                         ForEach(Category.allCases) { category in
                             Text(category.rawValue.capitalized).tag(category)
@@ -48,10 +50,9 @@ struct TransactionForm: View {
                         Text("Date")
                     }
                 }
-                
                 Section {
                     Picker("Account", selection: $account) {
-                        Text(AccountType.primary.rawValue.capitalized).tag(AccountType.primary)
+                        Text(AccountType.main.rawValue.capitalized).tag(AccountType.main)
                         Text(AccountType.reserve.rawValue.capitalized).tag(AccountType.reserve)
                     }
                     
@@ -65,7 +66,6 @@ struct TransactionForm: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        isFocused = false
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }

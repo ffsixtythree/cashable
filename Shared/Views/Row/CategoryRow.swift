@@ -9,17 +9,20 @@ import SwiftUI
 
 struct CategoryRow: View {
     
+    var category: Category
+    var amount: String
+    
     var body: some View {
         HStack {
             HStack(spacing: 10) {
-                CategoryImage(category: .shopping)
-                Text("Fuel")
+                CategoryImage(category: category)
+                Text(category.rawValue.capitalized)
                     .fontWeight(.medium)
                     .font(.body)
                     .foregroundColor(Color("text"))
             }
             Spacer()
-            Text("20,000 UZS")
+            Text(amount)
                 .foregroundColor(.green)
                 .font(.body)
                 .fontWeight(.semibold)
@@ -33,7 +36,7 @@ struct CategoryRow: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryRow()
+        CategoryRow(category: .shopping, amount: "10,000 UZS")
             .previewLayout(.sizeThatFits)
     }
 }

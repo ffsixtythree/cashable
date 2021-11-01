@@ -9,17 +9,31 @@ import SwiftUI
 
 struct AccountDetailView: View {
     
+    @State private var isTransactionFormPresented: Bool = false
+    
     var type: AccountType
     var amount: String
     
     var body: some View {
         List {
             Section {
-                BalanceView(type: type, amount: amount)
+                AccoundDetailHeaderView(type: type, amount: amount)
             }
             Section {
                 ForEach(Category.allCases) { category in
                     TransactionRow(category: category, amount: "2,000 UZS", date: "2 days ago")
+                }
+            }
+        }
+        .sheet(isPresented: $isTransactionFormPresented) {
+            TransactionForm()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isTransactionFormPresented = true
+                } label: {
+                    Image(systemName: "plus.circle.fill")
                 }
             }
         }

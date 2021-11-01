@@ -23,7 +23,7 @@ struct TransactionRow: View {
                         .font(.body)
                         .foregroundColor(Color("text"))
                     Text(date)
-                        .font(.body)
+                        .font(.subheadline)
                         .fontWeight(.regular)
                         .foregroundColor(.gray)
                 }

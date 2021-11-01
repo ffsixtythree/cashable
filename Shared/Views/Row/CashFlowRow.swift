@@ -16,10 +16,10 @@ struct CashFlowRow: View {
     
     var body: some View {
         ZStack {
-            NavigationLink(destination: CashFlowDetailView(), tag: 1, selection: $isDetailShown) {
+            NavigationLink(destination: CashFlowDetailView(type: .income, amount: incomeAmount), tag: 1, selection: $isDetailShown) {
                 EmptyView()
             }
-            NavigationLink(destination: CashFlowDetailView(), tag: 2, selection: $isDetailShown) {
+            NavigationLink(destination: CashFlowDetailView(type: .expense, amount: expensesAmount), tag: 2, selection: $isDetailShown) {
                 EmptyView()
             }
             HStack(spacing: 10) {
