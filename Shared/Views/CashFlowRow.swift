@@ -24,11 +24,11 @@ struct CashFlowRow: View {
                 EmptyView()
             }
             HStack(spacing: 10) {
-                CashFlowView(title: "INCOME", icon: Image(systemName: "arrow.down.circle.fill"), iconColor: Color.green, amount: incomeAmount, currency: currency)
+                CashFlowView(type: .income, amount: incomeAmount, currency: currency)
                     .onTapGesture {
                         self.isDetailShown = 1
                     }
-                CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.up.circle.fill"), iconColor: Color.red, amount: expensesAmount, currency: currency)
+                CashFlowView(type: .expense, amount: expensesAmount, currency: currency)
                     .onTapGesture {
                         self.isDetailShown = 2
                     }

@@ -16,7 +16,7 @@ struct CashFlowDetailView: View {
             }
             Section {
                 ForEach(0..<10) { _ in
-                    CategoryRow(title: "Fuel", category: .other, amount: "20,000 UZS", type: .income)
+                    CategoryRow()
                 }
             }
         }

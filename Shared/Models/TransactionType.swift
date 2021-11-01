@@ -12,6 +12,15 @@ enum TransactionType: String, CaseIterable {
     case income
     case expense
     
+    var systemNameIcon: String {
+        switch self {
+            case .income:
+                return "arrow.down.circle.fill"
+            case .expense:
+                return "arrow.up.circle.fill"
+        }
+    }
+    
     var color: Color {
         switch self {
             case .income:
@@ -20,6 +29,7 @@ enum TransactionType: String, CaseIterable {
                 return Color.red
         }
     }
+    
 }
 
 extension TransactionType: Identifiable {

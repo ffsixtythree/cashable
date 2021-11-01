@@ -11,8 +11,8 @@ struct AccountsRow: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                NavigationLink(destination: AccountDetailView()) {
-                    AccountView(icon: Image(systemName: "creditcard.circle.fill"), iconColor: .red, title: "BALANCE", amount: 0, currency: "USD")
+                ForEach(AccountType.allCases, id: \.id) { type in
+                    AccountView(type: type)
                 }
             }
         }

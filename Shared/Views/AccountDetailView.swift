@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AccountDetailView: View {
+    
+    var type: AccountType
+    
     var body: some View {
         List {
             Section {
@@ -24,6 +27,6 @@ struct AccountDetailView: View {
 
 struct AccountDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountDetailView()
+        AccountDetailView(type: .balance)
     }
 }

@@ -19,7 +19,7 @@ enum Category: String, CaseIterable {
     
     var systemNameIcon: String {
         switch self {
-        case .food: return "fork.knife"
+        case .food: return "takeoutbag.and.cup.and.straw.fill"
         case .entertainment: return "theatermasks.fill"
         case .health: return "staroflife.fill"
         case .shopping: return "cart.fill"

@@ -16,7 +16,7 @@ struct BalanceView: View {
                 Image(systemName: "arrow.down.circle.fill")
                     .renderingMode(.original)
                     .foregroundColor(.green)
-                    .font(.system(size: 60))
+                    .font(.system(size: 50))
                 Text("Income")
                     .font(.title)
                     .fontWeight(.semibold)

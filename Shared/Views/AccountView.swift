@@ -9,29 +9,22 @@ import SwiftUI
 
 struct AccountView: View {
     
-    var icon: Image
-    var iconColor: Color
-    var title: String
-    var amount: Double
-    var currency: String
+    var type: AccountType
     
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                icon
-                    .renderingMode(.original)
-                    .foregroundColor(iconColor)
-                    .font(.system(size: 40))
-                Text(title)
+                AccountImage(type: type)
+                Text(type.rawValue.capitalized)
                     .font(.headline)
                     .fontWeight(.semibold)
                     .foregroundColor(.gray)
                 VStack(alignment: .leading) {
-                    Text("\(amount)")
+                    Text("20,000")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(Color("text"))
-                    Text(currency)
+                    Text("UZS")
                         .font(.title2)
                         .fontWeight(.regular)
                         .foregroundColor(Color("text"))
@@ -49,7 +42,7 @@ struct AccountView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView(icon: Image(systemName: "creditcard.circle.fill"), iconColor: .blue, title: "BALANCE", amount: 0, currency: "USD")
+        AccountView(type: .balance)
             .previewLayout(.sizeThatFits)
     }
 }

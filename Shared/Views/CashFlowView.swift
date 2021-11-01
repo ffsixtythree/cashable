@@ -9,9 +9,15 @@ import SwiftUI
 
 struct CashFlowView: View {
     
-    var title: String
-    var icon: Image
-    var iconColor: Color
+    var type: TransactionType
+    var title: String {
+        switch type {
+            case .income:
+                return "INCOME"
+            case .expense:
+                return "EXPENSES"
+        }
+    }
     var amount: Double
     var currency: String
     
@@ -19,12 +25,12 @@ struct CashFlowView: View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 5) {
-                    icon
+                    Image(systemName: type.systemNameIcon)
                     Text(title)
                         .fontWeight(.medium)
                 }
                 .font(.subheadline)
-                .foregroundColor(iconColor)
+                .foregroundColor(type.color)
                 VStack(alignment: .leading) {
                     Text("\(amount)")
                         .fontWeight(.bold)
@@ -47,7 +53,7 @@ struct CashFlowView: View {
 
 struct CashFlowView_Previews: PreviewProvider {
     static var previews: some View {
-        CashFlowView(title: "EXPENSES", icon: Image(systemName: "arrow.down.circle.fill"), iconColor: Color.red, amount: 200, currency: "USD")
+        CashFlowView(type: .income, amount: 20, currency: "USD")
             .previewLayout(.sizeThatFits)
     }
 }
