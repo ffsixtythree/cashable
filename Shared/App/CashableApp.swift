@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct CashableApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistence = Persistence()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, persistence.viewContext)
         }
     }
 }

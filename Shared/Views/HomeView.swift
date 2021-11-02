@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HomeView: View {
     
+    @Environment(\.managedObjectContext)
+    var context: NSManagedObjectContext
+    
+    @State private var searchText : String = ""
     @State private var isTransactionFormPresented: Bool = false
     
     var body: some View {
@@ -20,9 +25,7 @@ struct HomeView: View {
                 AccountsRow()
             }
             Section {
-                ForEach(Category.allCases) { category in
-                    TransactionRow(category: category, amount: "2,000 UZS", date: "2 days ago")
-                }
+                TransactionsSection(predicate: Transaction.predicate(searchText: searchText), sortDescriptor: TransactionSort(sortType: .date, sortOrder: .descending).sortDescriptor)
             }
             
         }

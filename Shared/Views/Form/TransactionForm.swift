@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct TransactionForm: View {
+    
+    @Environment(\.managedObjectContext)
+    var context: NSManagedObjectContext
+    var transactionToEdit: Transaction?
     
     @State var type: TransactionType = .income
     @State var title: String = ""
@@ -15,19 +20,23 @@ struct TransactionForm: View {
     @State var category: Category = .utilities
     @State var account: AccountType = .main
     @State var date: Date = Date()
+    
     @FocusState private var isTitleFocused: Bool
     
     @Environment(\.presentationMode)
     var presentationMode
+    
+    var navigationTitle: String {
+        transactionToEdit == nil ? "New Transaction" : "Edit Transaction"
+    }
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
                     Picker("Transaction Type", selection: $type) {
-                        ForEach(TransactionType.allCases) { type in
-                            Text(type.rawValue.capitalized).tag(type)
-                        }
+                        Text("Income").tag(TransactionType.income)
+                        Text("Expense").tag(TransactionType.expense)
                     }
                     .pickerStyle(.segmented)
                     .listRowBackground(Color.clear)
@@ -40,14 +49,17 @@ struct TransactionForm: View {
                     TextField("Amount", value: $amount, formatter: Utils.numberFormatter)
                         .foregroundColor(type.color)
                         .keyboardType(.decimalPad)
+                }
+                Section {
+                    DatePicker(selection: $date, in: ...Date(), displayedComponents: .date) {
+                        Text("Date")
+                    }
+                }
+                Section {
                     Picker("Category", selection: $category) {
                         ForEach(Category.allCases) { category in
                             Text(category.rawValue.capitalized).tag(category)
                         }
-                    }
-                    .pickerStyle(.menu)
-                    DatePicker(selection: $date, displayedComponents: .date) {
-                        Text("Date")
                     }
                 }
                 Section {
@@ -55,26 +67,54 @@ struct TransactionForm: View {
                         Text(AccountType.main.rawValue.capitalized).tag(AccountType.main)
                         Text(AccountType.reserve.rawValue.capitalized).tag(AccountType.reserve)
                     }
-                    
                 }
             }
+            .multilineTextAlignment(.center)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
-                        self.presentationMode.wrappedValue.dismiss()
+                       onCancelTapped()
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        self.presentationMode.wrappedValue.dismiss()
+                        onSaveTapped()
                     }
                 }
             }
 #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
 #endif
-            .navigationTitle("New Transaction")
+            .navigationTitle(navigationTitle)
         }
+    }
+}
+
+extension TransactionForm {
+    private func onCancelTapped() {
+        self.presentationMode.wrappedValue.dismiss()
+    }
+    
+    private func onSaveTapped() {
+        let transaction: Transaction
+        
+        if let transactionToEdit = transactionToEdit {
+            transaction = transactionToEdit
+        } else {
+            transaction = Transaction(context: context)
+            transaction.id = UUID()
+        }
+        
+        transaction.title = title
+        transaction.typeEnum = type
+        transaction.amount = NSDecimalNumber(value: amount)
+        transaction.categoryEnum = category
+        transaction.accountEnum = account
+        transaction.date = date
+        
+        context.saveContext()
+        
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 

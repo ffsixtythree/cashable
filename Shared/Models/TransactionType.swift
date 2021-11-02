@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-enum TransactionType: String, CaseIterable {
+enum TransactionType: Int16, CaseIterable {
     
-    case income
-    case expense
+    case income = 0
+    case expense = 1
     
     var title: String {
         switch self {
@@ -42,5 +42,5 @@ enum TransactionType: String, CaseIterable {
 }
 
 extension TransactionType: Identifiable {
-    var id: String { rawValue }
+    var id: Int16 { rawValue }
 }

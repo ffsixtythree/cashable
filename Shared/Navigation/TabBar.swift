@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct TabBar: View {
+    
+    var context: NSManagedObjectContext
+    
     var body: some View {
         TabView {
             NavigationView {
@@ -22,6 +26,6 @@ struct TabBar: View {
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
+        TabBar(context: NSManagedObjectContext(.privateQueue))
     }
 }

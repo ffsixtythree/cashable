@@ -9,13 +9,10 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    
 #if os(iOS)
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 #endif
     
-    @Environment(\.managedObjectContext) private var viewContext
-
     var body: some View {
 #if os(iOS)
         if horizontalSizeClass == .compact {
@@ -36,7 +33,6 @@ struct ContentView: View {
         }
 #endif
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

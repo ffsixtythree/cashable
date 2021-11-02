@@ -21,12 +21,12 @@ struct AccountDetailView: View {
             }
             Section {
                 ForEach(Category.allCases) { category in
-                    TransactionRow(category: category, amount: "2,000 UZS", date: "2 days ago")
+                    
                 }
             }
         }
         .sheet(isPresented: $isTransactionFormPresented) {
-            TransactionForm()
+            
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

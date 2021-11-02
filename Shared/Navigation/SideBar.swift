@@ -6,15 +6,15 @@
 //
 
 import SwiftUI
-
-enum Tab {
-    case home
-}
+import CoreData
 
 struct SideBar: View {
     
-    @State private var selectedTab: Tab? = .home
+    @Environment(\.managedObjectContext)
+    var context: NSManagedObjectContext
     
+    @State private var selectedTab: Tab? = .home
+
     var body: some View {
         List {
             NavigationLink(destination: HomeView(), tag: Tab.home, selection: $selectedTab) {

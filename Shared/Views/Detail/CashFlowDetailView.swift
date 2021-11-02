@@ -26,7 +26,7 @@ struct CashFlowDetailView: View {
             }
         }
         .sheet(isPresented: $isTransactionFormPresented) {
-            TransactionForm()
+            
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
