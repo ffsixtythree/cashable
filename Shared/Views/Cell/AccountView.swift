@@ -10,7 +10,7 @@ import SwiftUI
 struct AccountView: View {
     
     var type: AccountType
-    var amount: String
+    var amount: Double
     
     var body: some View {
         HStack {
@@ -20,7 +20,7 @@ struct AccountView: View {
                     .font(.body)
                     .fontWeight(.medium)
                     .foregroundColor(type.color)
-                Text(amount)
+                Text(amount.formattedCurrencyText)
                     .font(.body)
                     .fontWeight(.bold)
                     .foregroundColor(Color("text"))
@@ -36,7 +36,7 @@ struct AccountView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView(type: .balance, amount: "20,000 UZS")
+        AccountView(type: .balance, amount: 0)
             .previewLayout(.sizeThatFits)
     }
 }

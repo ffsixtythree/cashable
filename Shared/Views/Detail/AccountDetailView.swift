@@ -12,7 +12,7 @@ struct AccountDetailView: View {
     @State private var isTransactionFormPresented: Bool = false
     
     var type: AccountType
-    var amount: String
+    var amount: Double
     
     var body: some View {
         List {
@@ -42,6 +42,6 @@ struct AccountDetailView: View {
 
 struct AccountDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountDetailView(type: .balance, amount: "300,000 UZS")
+        AccountDetailView(type: .balance, amount: 0)
     }
 }

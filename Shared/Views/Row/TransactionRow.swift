@@ -12,7 +12,7 @@ struct TransactionRow: View {
     var title: String
     var type: TransactionType
     var category: Category
-    var amount: String
+    var amount: Double
     var date: String
     var onTapGesture: (() -> ())
     
@@ -35,7 +35,7 @@ struct TransactionRow: View {
                     }
                 }
                 Spacer()
-                Text(amount)
+                Text(amount.formattedCurrencyText)
                     .foregroundColor(type.color)
                     .font(.body)
                     .fontWeight(.regular)
@@ -50,7 +50,7 @@ struct TransactionRow: View {
 
 struct TransactionRow_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionRow(title: "See", type: .expense, category: .food, amount: "5,000 UZS", date: "2 hours ago", onTapGesture: {})
+        TransactionRow(title: "See", type: .expense, category: .food, amount: 0, date: "2 hours ago", onTapGesture: {})
             .previewLayout(.sizeThatFits)
     }
 }

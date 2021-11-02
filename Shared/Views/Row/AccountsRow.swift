@@ -6,15 +6,28 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AccountsRow: View {
+    
+    @Environment(\.managedObjectContext)
+    var context: NSManagedObjectContext
+    
+    var balanceAmount: Double
+    var mainAmount: Double
+    var reserveAmount: Double
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(AccountType.allCases, id: \.id) { type in
-                    NavigationLink(destination: AccountDetailView(type: type, amount: "500,000 UZS")) {
-                        AccountView(type: type, amount: "500,000 UZS")
-                    }
+                NavigationLink(destination: AccountDetailView(type: .balance, amount: balanceAmount)) {
+                    AccountView(type: .balance, amount: balanceAmount)
+                }
+                NavigationLink(destination: AccountDetailView(type: .main, amount: mainAmount)) {
+                    AccountView(type: .main, amount: mainAmount)
+                }
+                NavigationLink(destination: AccountDetailView(type: .reserve, amount: reserveAmount)) {
+                    AccountView(type: .reserve, amount: reserveAmount)
                 }
             }
         }
@@ -25,6 +38,6 @@ struct AccountsRow: View {
 
 struct AccountsRow_Previews: PreviewProvider {
     static var previews: some View {
-        AccountsRow()
+        AccountsRow(balanceAmount: 0, mainAmount: 0, reserveAmount: 0)
     }
 }

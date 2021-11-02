@@ -12,7 +12,7 @@ struct CashFlowDetailView: View {
     @State private var isTransactionFormPresented: Bool = false
     
     var type: TransactionType
-    var amount: String
+    var amount: Double
     
     var body: some View {
         List {
@@ -21,7 +21,7 @@ struct CashFlowDetailView: View {
             }
             Section {
                 ForEach(Category.allCases) { category in
-                    CategoryRow(category: category, amount: "234,000 UZS")
+                    CategoryRow(category: category, amount: 0)
                 }
             }
         }
@@ -42,6 +42,6 @@ struct CashFlowDetailView: View {
 
 struct CashFlowDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CashFlowDetailView(type: .expense, amount: "20,000 UZS")
+        CashFlowDetailView(type: .expense, amount: 0)
     }
 }

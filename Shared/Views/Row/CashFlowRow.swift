@@ -11,8 +11,8 @@ struct CashFlowRow: View {
     
     @State private var isDetailShown: Int? = 0
     
-    var incomeAmount: String
-    var expensesAmount: String
+    var incomeAmount: Double
+    var expensesAmount: Double
     
     var body: some View {
         ZStack {
@@ -40,6 +40,6 @@ struct CashFlowRow: View {
 
 struct CashFlowRow_Previews: PreviewProvider {
     static var previews: some View {
-        CashFlowRow(incomeAmount: "15,000", expensesAmount: "8,000")
+        CashFlowRow(incomeAmount: 0, expensesAmount: 0)
     }
 }

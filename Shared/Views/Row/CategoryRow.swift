@@ -10,7 +10,7 @@ import SwiftUI
 struct CategoryRow: View {
     
     var category: Category
-    var amount: String
+    var amount: Double
     
     var body: some View {
         HStack {
@@ -22,7 +22,7 @@ struct CategoryRow: View {
                     .foregroundColor(Color("text"))
             }
             Spacer()
-            Text(amount)
+            Text(amount.formattedCurrencyText)
                 .foregroundColor(.green)
                 .font(.body)
                 .fontWeight(.semibold)
@@ -36,7 +36,7 @@ struct CategoryRow: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryRow(category: .shopping, amount: "10,000 UZS")
+        CategoryRow(category: .shopping, amount: 0)
             .previewLayout(.sizeThatFits)
     }
 }

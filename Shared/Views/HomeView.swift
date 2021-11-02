@@ -19,10 +19,10 @@ struct HomeView: View {
     var body: some View {
         List {
             Section {
-                CashFlowRow(incomeAmount: "1,500,000 UZS", expensesAmount: "500,000 UZS")
+                CashFlowRow(incomeAmount: 0, expensesAmount: 0)
             }
             Section {
-                AccountsRow()
+                AccountsRow(balanceAmount: 0, mainAmount: 0, reserveAmount: 0)
             }
             Section {
                 TransactionsSection(predicate: Transaction.predicate(searchText: searchText), sortDescriptor: TransactionSort(sortType: .date, sortOrder: .descending).sortDescriptor)

@@ -31,7 +31,7 @@ struct TransactionsSection: View {
     var body: some View {
         Section {
             ForEach(result) { (transaction: Transaction) in
-                TransactionRow(title: transaction.title, type: transaction.typeEnum, category: transaction.categoryEnum, amount: transaction.amountText, date: transaction.dateText, onTapGesture: {
+                TransactionRow(title: transaction.title, type: transaction.typeEnum, category: transaction.categoryEnum, amount: transaction.amount.doubleValue, date: transaction.dateText, onTapGesture: {
                     self.transactionToEdit = transaction
                 })
             }

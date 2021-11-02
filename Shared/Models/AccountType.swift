@@ -13,7 +13,6 @@ enum AccountType: String, CaseIterable {
     case main
     case reserve
     
-    
     var systemNameIcon: String {
         switch self {
             case .balance:

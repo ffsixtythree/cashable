@@ -10,7 +10,7 @@ import SwiftUI
 struct CashFlowDetailHeaderView: View {
     
     var type: TransactionType
-    var amount: String
+    var amount: Double
     
     var body: some View {
         HStack {
@@ -24,7 +24,7 @@ struct CashFlowDetailHeaderView: View {
                     .fontWeight(.medium)
                     .foregroundColor(type.color)
                 VStack(alignment: .leading) {
-                    Text(amount)
+                    Text(amount.formattedCurrencyText)
                         .font(.title)
                         .fontWeight(.semibold)
                 }
@@ -39,6 +39,6 @@ struct CashFlowDetailHeaderView: View {
 
 struct CashFlowDetailHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        CashFlowDetailHeaderView(type: .expense, amount: "20,000 UZS")
+        CashFlowDetailHeaderView(type: .expense, amount: 0)
     }
 }
