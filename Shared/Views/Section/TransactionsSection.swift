@@ -15,12 +15,13 @@ struct TransactionsSection: View {
     
     @State var transactionToEdit: Transaction?
     
-    @FetchRequest(entity: Transaction.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Transaction.date, ascending: false)])
+    @FetchRequest
     private var result: FetchedResults<Transaction>
     
-    init(predicate: NSPredicate?, sortDescriptor: NSSortDescriptor) {
+    init(predicate: NSPredicate?, sortDescriptor: NSSortDescriptor, fetchLimit: Int = 5) {
             let fetchRequest = NSFetchRequest<Transaction>(entityName: Transaction.entity().name ?? "Transaction")
             fetchRequest.sortDescriptors = [sortDescriptor]
+            fetchRequest.fetchLimit = fetchLimit
             
             if let predicate = predicate {
                 fetchRequest.predicate = predicate
