@@ -15,23 +15,11 @@ struct TransactionsSection: View {
     
     @State var transactionToEdit: Transaction?
     
-    @FetchRequest
-    private var result: FetchedResults<Transaction>
-    
-    init(predicate: NSPredicate?, sortDescriptor: NSSortDescriptor, fetchLimit: Int = 5) {
-            let fetchRequest = NSFetchRequest<Transaction>(entityName: Transaction.entity().name ?? "Transaction")
-            fetchRequest.sortDescriptors = [sortDescriptor]
-            fetchRequest.fetchLimit = fetchLimit
-            
-            if let predicate = predicate {
-                fetchRequest.predicate = predicate
-            }
-            _result = FetchRequest(fetchRequest: fetchRequest)
-        }
+    var transactions: FetchedResults<Transaction>
     
     var body: some View {
         Section {
-            ForEach(result) { (transaction: Transaction) in
+            ForEach(transactions) { (transaction: Transaction) in
                 TransactionRow(title: transaction.title, type: transaction.typeEnum, category: transaction.categoryEnum, amount: transaction.amount.doubleValue, date: transaction.dateText, onTapGesture: {
                     self.transactionToEdit = transaction
                 })
@@ -48,16 +36,10 @@ struct TransactionsSection: View {
 extension TransactionsSection {
     private func onDelete(with indexSet: IndexSet) {
         indexSet.forEach { index in
-            let transaction = result[index]
+            let transaction = transactions[index]
             context.delete(transaction)
         }
         context.saveContext()
     }
 
-}
-
-struct TransactionsList_Previews: PreviewProvider {
-    static var previews: some View {
-        TransactionsSection(predicate: Transaction.predicate(searchText: ""), sortDescriptor: TransactionSort(sortType: .amount, sortOrder: .ascending).sortDescriptor)
-    }
 }

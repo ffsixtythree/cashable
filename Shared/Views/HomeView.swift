@@ -16,32 +16,26 @@ struct HomeView: View {
     @State private var searchText : String = ""
     @State private var isTransactionFormPresented: Bool = false
     
-    @State private var incomeAmount: Double?
-    @State private var expensesAmount: Double?
-    @State private var balanceAmount: Double?
-    @State private var mainAmount: Double?
-    @State private var reserveAmount: Double?
+    @State var transactionToEdit: Transaction?
+    
+    @FetchRequest(fetchRequest: Transaction.fetchAllTransactions())
+    var transactions: FetchedResults<Transaction>
     
     var body: some View {
         List {
             Section {
-                CashFlowRow(incomeAmount: incomeAmount ?? 0, expensesAmount: expensesAmount ?? 0)
-                    .onAppear {
-                        fetchExpenseAmount()
-                        fetchIncomeAmount()
-                    }
+                CashFlowRow(incomeAmount: getIncomeAmount(), expensesAmount: getExpenseAmount())
             }
             Section {
-                AccountsRow(balanceAmount: balanceAmount ?? 0, mainAmount: mainAmount ?? 0, reserveAmount: reserveAmount ?? 0)
+                AccountsRow(balanceAmount: getBalanceAmount(), mainAmount: getAccountAmount(account: .main), reserveAmount: getAccountAmount(account: .reserve))
             }
             Section {
-                TransactionsSection(predicate: Transaction.predicate(searchText: searchText), sortDescriptor: TransactionSort(sortType: .date, sortOrder: .descending).sortDescriptor)
+                TransactionsSection(transactions: transactions)
             }
             
         }
         .sheet(isPresented: $isTransactionFormPresented, onDismiss: {
-            fetchExpenseAmount()
-            fetchIncomeAmount()
+            
         }) {
             TransactionForm()
         }
@@ -63,22 +57,28 @@ struct HomeView: View {
 }
 
 extension HomeView {
-    func fetchExpenseAmount() {
-            Transaction.fetchAllCategoriesExpensesAmount(context: self.context) { (results) in
-                guard !results.isEmpty else { return }
-                
-                let expensesSum = results.map { $0.sum }.reduce(0, +)
-                self.expensesAmount = expensesSum
-            }
+    func getIncomeAmount() -> Double {
+        return transactions.filter({$0.type == 0}).reduce(0) {
+            Double($0 + Double(truncating: $1.amount))
         }
-    func fetchIncomeAmount() {
-            Transaction.fetchAllCategoriesIncomeAmount(context: self.context) { (results) in
-                guard !results.isEmpty else { return }
-                
-                let incomeAmount = results.map { $0.sum }.reduce(0, +)
-                self.incomeAmount = incomeAmount
-            }
+    }
+    func getExpenseAmount() -> Double {
+        return transactions.filter({$0.type == 1}).reduce(0) {
+            Double($0 + Double(truncating: $1.amount))
         }
+    }
+    func getBalanceAmount() -> Double {
+        return getIncomeAmount() - getExpenseAmount()
+    }
+    func getAccountAmount(account: AccountType) -> Double {
+        let accountIncome = transactions.filter({$0.type == 0 && $0.account == account.rawValue}).reduce(0) {
+            Double($0 + Double(truncating: $1.amount))
+        }
+        let accountExpenses = transactions.filter({$0.type == 1 && $0.account == account.rawValue}).reduce(0) {
+            Double($0 + Double(truncating: $1.amount))
+        }
+        return accountIncome - accountExpenses
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {

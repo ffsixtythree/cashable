@@ -66,107 +66,23 @@ extension Transaction : Identifiable {
     
 }
 
-//MARK: Predicates
-extension Transaction {
-    static func predicate(searchText: String) -> NSPredicate? {
-            var predicates = [NSPredicate]()
-            
-            // 3
-            if !searchText.isEmpty {
-                predicates.append(NSPredicate(format: "title CONTAINS[cd] %@", searchText.lowercased()))
-            }
-            
-            // 4
-            if predicates.isEmpty {
-                return nil
-            } else {
-                return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
-            }
-        }
-}
-
 //MARK: Fetching
 extension Transaction {
-    static func fetchAllCategoriesIncomeAmount(context: NSManagedObjectContext, completion: @escaping ([(sum: Double, category: Category)]) -> ()) {
-        
-                // 2
-            let keypathAmount = NSExpression(forKeyPath: \Transaction.amount)
-            let expression = NSExpression(forFunction: "sum:", arguments: [keypathAmount])
-            
-            let sumDesc = NSExpressionDescription()
-            sumDesc.expression = expression
-            sumDesc.name = "sum"
-            sumDesc.expressionResultType = .decimalAttributeType
-            
-            // 3
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: Transaction.entity().name ?? "Transaction")
-            request.returnsObjectsAsFaults = false
-            request.propertiesToGroupBy = ["category"]
-            request.propertiesToFetch = [sumDesc, "category"]
-            request.resultType = .dictionaryResultType
-            request.predicate = NSPredicate(format: "type != \(1)")
-            
-            // 4
-            context.perform {
-                do {
-                    let results = try request.execute()
-                    let data = results.map { (result) -> (Double, Category)? in
-                        guard
-                            let resultDict = result as? [String: Any],
-                            let amount = resultDict["sum"] as? Double, amount > 0,
-                            let categoryKey = resultDict["category"] as? String,
-                            let category = Category(rawValue: categoryKey) else {
-                                return nil
-                        }
-                        return (amount, category)
-                    }.compactMap { $0 }
-                    completion(data)
-                } catch let error as NSError {
-                    print((error.localizedDescription))
-                    completion([])
-                }
-            }
-            
+    static func fetchTransactions(type: TransactionType, sort: TransactionSort = TransactionSort(sortType: .date, sortOrder: .ascending)) -> NSFetchRequest<Transaction> {
+        let request: NSFetchRequest<Transaction> = Transaction.fetchRequest()
+        if type == .income {
+            let predicate = NSPredicate(format: "type == \(0)")
+            request.predicate = predicate
+        } else if type == .expense {
+            let predicate = NSPredicate(format: "type == \(1)")
+            request.predicate = predicate
         }
-    static func fetchAllCategoriesExpensesAmount(context: NSManagedObjectContext, completion: @escaping ([(sum: Double, category: Category)]) -> ()) {
-        
-                // 2
-            let keypathAmount = NSExpression(forKeyPath: \Transaction.amount)
-            let expression = NSExpression(forFunction: "sum:", arguments: [keypathAmount])
-            
-            let sumDesc = NSExpressionDescription()
-            sumDesc.expression = expression
-            sumDesc.name = "sum"
-            sumDesc.expressionResultType = .decimalAttributeType
-            
-            // 3
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: Transaction.entity().name ?? "Transaction")
-            request.returnsObjectsAsFaults = false
-            request.propertiesToGroupBy = ["category"]
-            request.propertiesToFetch = [sumDesc, "category"]
-            request.resultType = .dictionaryResultType
-            request.predicate = NSPredicate(format: "type != \(0)")
-            
-            // 4
-            context.perform {
-                do {
-                    let results = try request.execute()
-                    let data = results.map { (result) -> (Double, Category)? in
-                        guard
-                            let resultDict = result as? [String: Any],
-                            let amount = resultDict["sum"] as? Double, amount > 0,
-                            let categoryKey = resultDict["category"] as? String,
-                            let category = Category(rawValue: categoryKey) else {
-                                return nil
-                        }
-                        return (amount, category)
-                    }.compactMap { $0 }
-                    completion(data)
-                } catch let error as NSError {
-                    print((error.localizedDescription))
-                    completion([])
-                }
-            }
-            
-        }
+        request.sortDescriptors = [sort.sortDescriptor]
+        return request
+    }
+    static func fetchAllTransactions(sort: TransactionSort = TransactionSort(sortType: .date, sortOrder: .descending)) -> NSFetchRequest<Transaction> {
+        let request: NSFetchRequest<Transaction> = Transaction.fetchRequest()
+        request.sortDescriptors = [sort.sortDescriptor]
+        return request
+    }
 }
