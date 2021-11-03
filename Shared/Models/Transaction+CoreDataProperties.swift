@@ -87,7 +87,7 @@ extension Transaction {
 
 //MARK: Fetching
 extension Transaction {
-    static func fetchAllCategoriesIncomeSum(context: NSManagedObjectContext, completion: @escaping ([(sum: Double, category: Category)]) -> ()) {
+    static func fetchAllCategoriesIncomeAmount(context: NSManagedObjectContext, completion: @escaping ([(sum: Double, category: Category)]) -> ()) {
         
                 // 2
             let keypathAmount = NSExpression(forKeyPath: \Transaction.amount)
@@ -128,7 +128,7 @@ extension Transaction {
             }
             
         }
-    static func fetchAllCategoriesExpensesSum(context: NSManagedObjectContext, completion: @escaping ([(sum: Double, category: Category)]) -> ()) {
+    static func fetchAllCategoriesExpensesAmount(context: NSManagedObjectContext, completion: @escaping ([(sum: Double, category: Category)]) -> ()) {
         
                 // 2
             let keypathAmount = NSExpression(forKeyPath: \Transaction.amount)

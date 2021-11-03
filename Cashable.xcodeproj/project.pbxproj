@@ -27,6 +27,8 @@
 		D78E42D3272EB82700328D6D /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E42D1272EB82700328D6D /* AccountDetailView.swift */; };
 		D7B4943A2731D22B00D05130 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B494392731D22B00D05130 /* Tab.swift */; };
 		D7B4943B2731D22B00D05130 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B494392731D22B00D05130 /* Tab.swift */; };
+		D7B4943D2732AC2600D05130 /* CategorySum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4943C2732AC2600D05130 /* CategorySum.swift */; };
+		D7B4943E2732AC2600D05130 /* CategorySum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4943C2732AC2600D05130 /* CategorySum.swift */; };
 		D7C88A09272F1F140029468A /* TransactionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C88A08272F1F140029468A /* TransactionForm.swift */; };
 		D7C88A0A272F1F140029468A /* TransactionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C88A08272F1F140029468A /* TransactionForm.swift */; };
 		D7C88A0C272F21270029468A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C88A0B272F21270029468A /* Category.swift */; };
@@ -103,6 +105,7 @@
 		D78E42CA272E9D5400328D6D /* AccoundDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccoundDetailHeaderView.swift; sourceTree = "<group>"; };
 		D78E42D1272EB82700328D6D /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		D7B494392731D22B00D05130 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		D7B4943C2732AC2600D05130 /* CategorySum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySum.swift; sourceTree = "<group>"; };
 		D7C88A08272F1F140029468A /* TransactionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionForm.swift; sourceTree = "<group>"; };
 		D7C88A0B272F21270029468A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D7C88A0F272F23C10029468A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -214,10 +217,10 @@
 		D7C88A27273019950029468A /* Row */ = {
 			isa = PBXGroup;
 			children = (
-				D780199C272C404B00746F84 /* AccountsRow.swift */,
 				D7801999272C3C8600746F84 /* CashFlowRow.swift */,
-				D706DC1F272D745700575741 /* TransactionRow.swift */,
+				D780199C272C404B00746F84 /* AccountsRow.swift */,
 				D7423890272DC117002124FD /* CategoryRow.swift */,
+				D706DC1F272D745700575741 /* TransactionRow.swift */,
 			);
 			path = Row;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				D7C88A1F272FF2420029468A /* AccountType.swift */,
 				D7C88A16272F25C50029468A /* TransactionType.swift */,
 				D7C88A0B272F21270029468A /* Category.swift */,
+				D7B4943C2732AC2600D05130 /* CategorySum.swift */,
 				D7C88A36273084440029468A /* Sort.swift */,
 				D7B494392731D22B00D05130 /* Tab.swift */,
 				D7D5F831272C0D87005E90CF /* Cashable.xcdatamodeld */,
@@ -533,6 +537,7 @@
 				D7423891272DC117002124FD /* CategoryRow.swift in Sources */,
 				D780199A272C3C8600746F84 /* CashFlowRow.swift in Sources */,
 				D7D5F860272C0D89005E90CF /* ContentView.swift in Sources */,
+				D7B4943D2732AC2600D05130 /* CategorySum.swift in Sources */,
 				D7C88A17272F25C50029468A /* TransactionType.swift in Sources */,
 				D706DC23272D964B00575741 /* TabBar.swift in Sources */,
 				D706DC20272D745700575741 /* TransactionRow.swift in Sources */,
@@ -570,6 +575,7 @@
 				D7423892272DC117002124FD /* CategoryRow.swift in Sources */,
 				D780199E272C404B00746F84 /* AccountsRow.swift in Sources */,
 				D706DC21272D745700575741 /* TransactionRow.swift in Sources */,
+				D7B4943E2732AC2600D05130 /* CategorySum.swift in Sources */,
 				D7C88A18272F25C50029468A /* TransactionType.swift in Sources */,
 				D780199B272C3C8600746F84 /* CashFlowRow.swift in Sources */,
 				D7D5F861272C0D89005E90CF /* ContentView.swift in Sources */,
