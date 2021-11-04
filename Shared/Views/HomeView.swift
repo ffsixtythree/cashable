@@ -27,10 +27,10 @@ struct HomeView: View {
                 CashFlowRow(incomeAmount: getIncomeAmount(), expensesAmount: getExpenseAmount())
             }
             Section {
-                AccountsRow(balanceAmount: getBalanceAmount(), mainAmount: getAccountAmount(account: .main), reserveAmount: getAccountAmount(account: .reserve))
+                AccountsRow(balanceAmount: getBalanceAmount(), mainAmount: getAccountAmount(account: .main), reserveAmount: getAccountAmount(account: .reserve), transactions: transactions)
             }
             Section {
-                TransactionsSection(transactions: transactions)
+                TransactionsSection(type: .balance, transactions: transactions)
             }
             
         }

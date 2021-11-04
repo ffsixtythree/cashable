@@ -6,24 +6,25 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AccountDetailView: View {
+    
+    @Environment(\.managedObjectContext)
+    var context: NSManagedObjectContext
     
     @State private var isTransactionFormPresented: Bool = false
     
     var type: AccountType
     var amount: Double
+    var transactions: FetchedResults<Transaction>
     
     var body: some View {
         List {
             Section {
                 AccoundDetailHeaderView(type: type, amount: amount)
             }
-            Section {
-                ForEach(Category.allCases) { category in
-                    
-                }
-            }
+            TransactionsSection(type: type, transactions: transactions)
         }
         .sheet(isPresented: $isTransactionFormPresented) {
             
@@ -37,11 +38,5 @@ struct AccountDetailView: View {
                 }
             }
         }
-    }
-}
-
-struct AccountDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        AccountDetailView(type: .balance, amount: 0)
     }
 }

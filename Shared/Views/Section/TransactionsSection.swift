@@ -15,11 +15,17 @@ struct TransactionsSection: View {
     
     @State var transactionToEdit: Transaction?
     
+    var type: AccountType
     var transactions: FetchedResults<Transaction>
     
     var body: some View {
         Section {
-            ForEach(transactions) { (transaction: Transaction) in
+            ForEach(transactions.filter {
+                if type == .balance {
+                    return $0.account == "main" || $0.account == "reserve"
+                }
+                return $0.account == type.rawValue
+            }) { (transaction: Transaction) in
                 TransactionRow(title: transaction.title, type: transaction.typeEnum, category: transaction.categoryEnum, amount: transaction.amount.doubleValue, date: transaction.dateText, onTapGesture: {
                     self.transactionToEdit = transaction
                 })
