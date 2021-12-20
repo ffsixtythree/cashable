@@ -10,9 +10,6 @@ import CoreData
 
 struct HomeView: View {
     
-    @Environment(\.managedObjectContext)
-    var context: NSManagedObjectContext
-    
     @State private var searchText : String = ""
     @State private var isTransactionFormPresented: Bool = false
     

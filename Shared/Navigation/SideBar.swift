@@ -10,9 +10,6 @@ import CoreData
 
 struct SideBar: View {
     
-    @Environment(\.managedObjectContext)
-    var context: NSManagedObjectContext
-    
     @State private var selectedTab: Tab? = .home
 
     var body: some View {

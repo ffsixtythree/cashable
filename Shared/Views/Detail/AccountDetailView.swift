@@ -29,14 +29,5 @@ struct AccountDetailView: View {
         .sheet(isPresented: $isTransactionFormPresented) {
             
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    isTransactionFormPresented = true
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                }
-            }
-        }
     }
 }
