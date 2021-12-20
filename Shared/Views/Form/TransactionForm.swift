@@ -21,7 +21,7 @@ struct TransactionForm: View {
     @State var account: AccountType = .main
     @State var date: Date = Date()
     
-    @FocusState var isTitleFocused: Bool
+    @FocusState var focusedField: Field?
     
     @Environment(\.presentationMode)
     var presentationMode
@@ -45,8 +45,9 @@ struct TransactionForm: View {
                 Section {
                     TextField("Title", text: $title)
                         .disableAutocorrection(true)
-                        .focused($isTitleFocused)
+                        .focused($focusedField, equals: .title)
                     TextField("Amount", value: $amount, formatter: Utils.numberFormatter)
+                        .focused($focusedField, equals: .amount)
                         .foregroundColor(type.color)
                         .keyboardType(.decimalPad)
                 }

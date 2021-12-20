@@ -15,6 +15,8 @@
 		D7423889272DA56D002124FD /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D706DC25272D966700575741 /* SideBar.swift */; };
 		D7423891272DC117002124FD /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7423890272DC117002124FD /* CategoryRow.swift */; };
 		D7423892272DC117002124FD /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7423890272DC117002124FD /* CategoryRow.swift */; };
+		D75DA37A277089DF00753348 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75DA379277089DF00753348 /* Field.swift */; };
+		D75DA37B277089DF00753348 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75DA379277089DF00753348 /* Field.swift */; };
 		D780199A272C3C8600746F84 /* CashFlowRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801999272C3C8600746F84 /* CashFlowRow.swift */; };
 		D780199B272C3C8600746F84 /* CashFlowRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7801999272C3C8600746F84 /* CashFlowRow.swift */; };
 		D780199D272C404B00746F84 /* AccountsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780199C272C404B00746F84 /* AccountsRow.swift */; };
@@ -99,6 +101,7 @@
 		D706DC22272D964B00575741 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D706DC25272D966700575741 /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		D7423890272DC117002124FD /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		D75DA379277089DF00753348 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		D7801999272C3C8600746F84 /* CashFlowRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowRow.swift; sourceTree = "<group>"; };
 		D780199C272C404B00746F84 /* AccountsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRow.swift; sourceTree = "<group>"; };
 		D78E42C7272E9C2600328D6D /* CashFlowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailView.swift; sourceTree = "<group>"; };
@@ -193,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				D7C88A0F272F23C10029468A /* Utils.swift */,
+				D75DA379277089DF00753348 /* Field.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -529,6 +533,7 @@
 				D7D5F862272C0D89005E90CF /* Persistence.swift in Sources */,
 				D7C88A0C272F21270029468A /* Category.swift in Sources */,
 				D7C88A3E2731C3630029468A /* TransactionsSection.swift in Sources */,
+				D75DA37A277089DF00753348 /* Field.swift in Sources */,
 				D7D5F85C272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,
 				D7D5F878272C10E8005E90CF /* HomeView.swift in Sources */,
 				D78E42CB272E9D5400328D6D /* AccoundDetailHeaderView.swift in Sources */,
@@ -567,6 +572,7 @@
 				D7D5F863272C0D89005E90CF /* Persistence.swift in Sources */,
 				D7C88A0D272F21270029468A /* Category.swift in Sources */,
 				D7C88A3F2731C3630029468A /* TransactionsSection.swift in Sources */,
+				D75DA37B277089DF00753348 /* Field.swift in Sources */,
 				D7D5F85D272C0D89005E90CF /* Cashable.xcdatamodeld in Sources */,
 				D7D5F879272C10E8005E90CF /* HomeView.swift in Sources */,
 				D78E42CC272E9D5400328D6D /* AccoundDetailHeaderView.swift in Sources */,
