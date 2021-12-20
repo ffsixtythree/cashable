@@ -13,15 +13,17 @@ struct TransactionForm: View {
     @Environment(\.managedObjectContext)
     var context: NSManagedObjectContext
     var transactionToEdit: Transaction?
+    var isNew: Bool
     
     @State var type: TransactionType = .income
     @State var title: String = ""
+    @State var password: String = ""
     @State var amount: Double = 0
     @State var category: Category = .utilities
     @State var account: AccountType = .main
     @State var date: Date = Date()
     
-    @FocusState var focusedField: Field?
+    @FocusState private var focusedField: Field?
     
     @Environment(\.presentationMode)
     var presentationMode
@@ -67,6 +69,13 @@ struct TransactionForm: View {
                     Picker("Account", selection: $account) {
                         Text(AccountType.main.rawValue.capitalized).tag(AccountType.main)
                         Text(AccountType.reserve.rawValue.capitalized).tag(AccountType.reserve)
+                    }
+                }
+            }
+            .onAppear {
+                if isNew {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                        focusedField = .title
                     }
                 }
             }
@@ -121,6 +130,6 @@ extension TransactionForm {
 
 struct TransactionForm_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionForm()
+        TransactionForm(isNew: true)
     }
 }

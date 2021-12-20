@@ -7,8 +7,7 @@
 
 import Foundation
 
-enum Field {
+enum Field: Hashable {
     case title
     case amount
-    case unfocused
 }
