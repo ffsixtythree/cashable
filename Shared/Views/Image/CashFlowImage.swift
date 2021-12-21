@@ -1,15 +1,15 @@
 //
-//  AccountImage.swift
+//  CashFlowImage.swift
 //  Cashable
 //
-//  Created by Umid Saidov on 01/11/21.
+//  Created by Umid Saidov on 21/12/21.
 //
 
 import SwiftUI
 
-struct AccountImage: View {
+struct CashFlowImage: View {
     
-    var type: AccountType
+    var type: TransactionType
     var width: CGFloat
     var padding: CGFloat
     
@@ -25,8 +25,9 @@ struct AccountImage: View {
     }
 }
 
-struct AccountImage_Previews: PreviewProvider {
+struct CashFlowImage_Previews: PreviewProvider {
     static var previews: some View {
-        AccountImage(type: .balance, width: 20, padding: 10)
+        CashFlowImage(type: .expense, width: 20, padding: 10)
     }
 }
+

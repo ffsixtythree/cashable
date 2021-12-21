@@ -17,8 +17,8 @@ struct CategoryImage: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 20, height: 20)
             .padding(10)
-            .foregroundColor(category.color)
-            .background(category.color.opacity(0.1))
+            .foregroundColor(.white)
+            .background(category.color)
             .cornerRadius(5)
     }
 }

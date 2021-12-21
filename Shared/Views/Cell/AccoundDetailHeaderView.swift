@@ -16,7 +16,7 @@ struct AccoundDetailHeaderView: View {
         HStack {
             Spacer()
             VStack(alignment: .center, spacing: 10) {
-                AccountImage(type: type, width: 30, padding: 15)
+                AccountImage(type: type, width: 40, padding: 20)
                 Text(type.rawValue.capitalized)
                     .font(.title)
                     .fontWeight(.medium)
@@ -29,8 +29,8 @@ struct AccoundDetailHeaderView: View {
             }
             Spacer()
         }
-        .padding(20)
-        .background(Color("cell"))
+        .listRowBackground(Color.clear)
+        .listRowInsets(EdgeInsets())
         .cornerRadius(10)
     }
 }

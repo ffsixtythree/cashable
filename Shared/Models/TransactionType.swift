@@ -24,6 +24,15 @@ enum TransactionType: Int16, CaseIterable {
     var systemNameIcon: String {
         switch self {
             case .income:
+                return "arrow.down"
+            case .expense:
+                return "arrow.up"
+        }
+    }
+    
+    var systemNameIconCircleFill: String {
+        switch self {
+            case .income:
                 return "arrow.down.circle.fill"
             case .expense:
                 return "arrow.up.circle.fill"

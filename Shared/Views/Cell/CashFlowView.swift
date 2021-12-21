@@ -16,16 +16,18 @@ struct CashFlowView: View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 5) {
-                    Image(systemName: type.systemNameIcon)
+                    Image(systemName: type.systemNameIconCircleFill)
+                        .renderingMode(.original)
+                        .foregroundColor(type.color)
                     Text(type.title)
                         .fontWeight(.medium)
+                        .foregroundColor(type.color)
                 }
                 .font(.subheadline)
-                .foregroundColor(type.color)
                 Text(amount.formattedCurrencyText)
                     .fontWeight(.bold)
                     .font(.body)
-                    .foregroundColor(Color("text"))
+                    .foregroundColor(.text)
             }
             Spacer()
         }

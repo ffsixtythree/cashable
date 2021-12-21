@@ -16,9 +16,7 @@ struct CashFlowDetailHeaderView: View {
         HStack {
             Spacer()
             VStack(alignment: .center, spacing: 10) {
-                Image(systemName: type.systemNameIcon)
-                    .font(.system(size: 50))
-                    .foregroundColor(type.color)
+                CashFlowImage(type: type, width: 40, padding: 20)
                 Text(type.title.capitalized)
                     .font(.title)
                     .fontWeight(.medium)
@@ -31,8 +29,8 @@ struct CashFlowDetailHeaderView: View {
             }
             Spacer()
         }
-        .padding(20)
-        .background(Color("cell"))
+        .listRowBackground(Color.clear)
+        .listRowInsets(EdgeInsets())
         .cornerRadius(10)
     }
 }

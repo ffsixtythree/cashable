@@ -19,7 +19,7 @@ struct AccountView: View {
                 Text(type.rawValue.capitalized)
                     .font(.body)
                     .fontWeight(.medium)
-                    .foregroundColor(type.color)
+                    .foregroundColor(Color("text"))
                 Text(amount.formattedCurrencyText)
                     .font(.body)
                     .fontWeight(.bold)
