@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoryRow: View {
     
+    var type: TransactionType
     var category: Category
     var amount: Double
     
@@ -23,7 +24,7 @@ struct CategoryRow: View {
             }
             Spacer()
             Text(amount.formattedCurrencyText)
-                .foregroundColor(.green)
+                .foregroundColor(type.color)
                 .font(.body)
                 .fontWeight(.semibold)
                 .frame(width: 130, alignment: .trailing)
@@ -36,7 +37,7 @@ struct CategoryRow: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryRow(category: .shopping, amount: 0)
+        CategoryRow(type: .expense, category: .shopping, amount: 0)
             .previewLayout(.sizeThatFits)
     }
 }

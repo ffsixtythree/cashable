@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct CashFlowDetailView: View {
     
+    @Environment(\.managedObjectContext)
+    var context: NSManagedObjectContext
+    
     @State private var isTransactionFormPresented: Bool = false
+    @State private var categoriesSum: [CategorySum]?
     
     var type: TransactionType
     var amount: Double
@@ -20,12 +25,28 @@ struct CashFlowDetailView: View {
                 CashFlowDetailHeaderView(type: type, amount: amount)
             }
             Section {
-                ForEach(Category.allCases) { category in
-                    CategoryRow(category: category, amount: 0)
+                if let categoriesSum = categoriesSum {
+                    ForEach(categoriesSum.sorted(by: >)) {
+                        CategoryRow(type: type, category: $0.category, amount: $0.sum)
+                    }
                 }
             }
         }
         .sheet(isPresented: $isTransactionFormPresented) {
+            
+        }
+        .onAppear(perform: fetchTotalSums)
+    }
+}
+
+extension CashFlowDetailView {
+    func fetchTotalSums() {
+        Transaction.fetchAllCategoriesTotalAmountSum(context: self.context) { (results) in
+            guard !results.isEmpty else { return }
+            
+            self.categoriesSum = results.map { (result) -> CategorySum in
+                return CategorySum(sum: result.sum, category: result.category)
+            }
             
         }
     }
