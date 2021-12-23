@@ -31,10 +31,8 @@ struct HomeView: View {
             }
             
         }
-        .sheet(isPresented: $isTransactionFormPresented, onDismiss: {
-            
-        }) {
-            TransactionForm(isNew: true)
+        .sheet(isPresented: $isTransactionFormPresented) {
+            TransactionForm()
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

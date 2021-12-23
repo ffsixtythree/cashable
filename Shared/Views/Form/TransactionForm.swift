@@ -13,7 +13,6 @@ struct TransactionForm: View {
     @Environment(\.managedObjectContext)
     var context: NSManagedObjectContext
     var transactionToEdit: Transaction?
-    var isNew: Bool
     
     @State var type: TransactionType = .income
     @State var title: String = ""
@@ -30,6 +29,10 @@ struct TransactionForm: View {
     
     var navigationTitle: String {
         transactionToEdit == nil ? "New Transaction" : "Edit Transaction"
+    }
+    
+    var isNew: Bool {
+        transactionToEdit == nil ? true : false
     }
     
     var body: some View {
@@ -92,10 +95,10 @@ struct TransactionForm: View {
                     }
                 }
             }
+            .navigationTitle(navigationTitle)
 #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
 #endif
-            .navigationTitle(navigationTitle)
         }
     }
 }
@@ -104,7 +107,6 @@ extension TransactionForm {
     private func onCancelTapped() {
         self.presentationMode.wrappedValue.dismiss()
     }
-    
     private func onSaveTapped() {
         let transaction: Transaction
         
@@ -130,6 +132,6 @@ extension TransactionForm {
 
 struct TransactionForm_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionForm(isNew: true)
+        TransactionForm()
     }
 }

@@ -32,7 +32,7 @@ struct TransactionsSection: View {
             }
             .onDelete(perform: onDelete)
             .sheet(item: $transactionToEdit, onDismiss: { transactionToEdit = nil }) { (transaction: Transaction) in
-                TransactionForm(transactionToEdit: transactionToEdit, isNew: false, type: transactionToEdit?.typeEnum ?? TransactionType.income, title: transaction.title, amount: transaction.amount.doubleValue, category: transaction.categoryEnum, account: transaction.accountEnum, date: transaction.date)
+                TransactionForm(transactionToEdit: transactionToEdit, type: transactionToEdit?.typeEnum ?? TransactionType.income, title: transaction.title, amount: transaction.amount.doubleValue, category: transaction.categoryEnum, account: transaction.accountEnum, date: transaction.date)
             }
         }
     }
