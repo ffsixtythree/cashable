@@ -15,17 +15,13 @@ struct TransactionsSection: View {
     
     @State var transactionToEdit: Transaction?
     
+    var limit: Int = 0
     var type: AccountType
     var transactions: FetchedResults<Transaction>
     
     var body: some View {
         Section {
-            ForEach(transactions.filter {
-                if type == .balance {
-                    return $0.account == "main" || $0.account == "reserve"
-                }
-                return $0.account == type.rawValue
-            }) { (transaction: Transaction) in
+            ForEach(getTransactions(limit: limit)) { (transaction: Transaction) in
                 TransactionRow(title: transaction.title, type: transaction.typeEnum, category: transaction.categoryEnum, amount: transaction.amount.doubleValue, date: transaction.dateText, onTapGesture: {
                     self.transactionToEdit = transaction
                 })
@@ -40,6 +36,18 @@ struct TransactionsSection: View {
 }
 
 extension TransactionsSection {
+    private func getTransactions(limit: Int) -> [Transaction] {
+        if limit == 0 {
+            return transactions.filter {
+                if type == .balance {
+                    return $0.account == "main" || $0.account == "reserve"
+                }
+                return $0.account == type.rawValue
+            }
+        } else {
+            return Array(transactions.prefix(limit))
+        }
+    }
     private func onDelete(with indexSet: IndexSet) {
         indexSet.forEach { index in
             let transaction = transactions[index]

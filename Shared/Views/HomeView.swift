@@ -27,7 +27,7 @@ struct HomeView: View {
                 AccountsRow(balanceAmount: getBalanceAmount(), mainAmount: getAccountAmount(account: .main), reserveAmount: getAccountAmount(account: .reserve), transactions: transactions)
             }
             Section {
-                TransactionsSection(type: .balance, transactions: transactions)
+                TransactionsSection(limit: 5, type: .balance, transactions: transactions)
             }
             
         }

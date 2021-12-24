@@ -16,7 +16,6 @@ struct TransactionForm: View {
     
     @State var type: TransactionType = .income
     @State var title: String = ""
-    @State var password: String = ""
     @State var amount: Double = 0
     @State var category: Category = .utilities
     @State var account: AccountType = .main
