@@ -27,7 +27,7 @@ struct TransactionRow: View {
                         Text(title)
                             .fontWeight(.medium)
                             .font(.body)
-                            .foregroundColor(Color("text"))
+                            .foregroundColor(.text)
                         Text(date)
                             .font(.subheadline)
                             .fontWeight(.regular)

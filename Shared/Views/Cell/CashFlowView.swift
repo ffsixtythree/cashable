@@ -33,7 +33,7 @@ struct CashFlowView: View {
         }
         .lineLimit(1)
         .padding(20)
-        .background(Color("cell"))
+        .background(Color.cell)
         .cornerRadius(10)
     }
 }

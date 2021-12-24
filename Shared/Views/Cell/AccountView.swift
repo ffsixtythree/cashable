@@ -19,16 +19,16 @@ struct AccountView: View {
                 Text(type.rawValue.capitalized)
                     .font(.body)
                     .fontWeight(.medium)
-                    .foregroundColor(Color("text"))
+                    .foregroundColor(.text)
                 Text(amount.formattedCurrencyText)
                     .font(.body)
                     .fontWeight(.bold)
-                    .foregroundColor(Color("text"))
+                    .foregroundColor(.text)
             }
             Spacer()
         }
         .padding(20)
-        .background(Color("cell"))
+        .background(Color.cell)
         .cornerRadius(10)
         .aspectRatio(1.5 / 1, contentMode: .fill)
     }

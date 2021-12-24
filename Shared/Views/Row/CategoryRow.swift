@@ -20,7 +20,7 @@ struct CategoryRow: View {
                 Text(category.rawValue.capitalized)
                     .fontWeight(.medium)
                     .font(.body)
-                    .foregroundColor(Color("text"))
+                    .foregroundColor(.text)
             }
             Spacer()
             Text(amount.formattedCurrencyText)

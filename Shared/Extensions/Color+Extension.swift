@@ -9,4 +9,5 @@ import SwiftUI
 
 extension Color {
     static let text = Color("text")
+    static let cell = Color("cell")
 }
