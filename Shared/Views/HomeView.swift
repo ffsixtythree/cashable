@@ -26,10 +26,10 @@ struct HomeView: View {
             Section {
                 AccountsRow(balanceAmount: getBalanceAmount(), mainAmount: getAccountAmount(account: .main), reserveAmount: getAccountAmount(account: .reserve), transactions: transactions)
             }
-            Section {
+            Section(header: Text("Latest Transactions")) {
                 TransactionsSection(limit: 5, type: .balance, transactions: transactions)
             }
-            
+            .headerProminence(.increased)
         }
         .sheet(isPresented: $isTransactionFormPresented) {
             TransactionForm()
